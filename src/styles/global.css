@@ -7,3 +7,7 @@
 html {
 	font-family: 'Dodo';
 }
+
+a {
+	text-decoration: none;
+}

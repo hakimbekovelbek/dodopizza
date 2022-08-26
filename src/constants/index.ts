@@ -35,4 +35,8 @@ export const NAVBAR_CONFIG = [
 		label: 'О нас',
 		link: 'about',
 	},
+	{
+		label: 'Прямой эфир',
+		link: 'live',
+	},
 ]

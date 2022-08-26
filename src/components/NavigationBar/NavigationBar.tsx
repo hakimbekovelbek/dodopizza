@@ -1,24 +1,27 @@
+import React from 'react'
 import { NAVBAR_CONFIG } from '../../constants'
+// @ts-ignore
+import styles from './NavigationBar.module.css'
 
-export const NavigationBar: React.FC = () => {
-	return (
-		<div className='header_nav_menu'>
-			<div className='center'>
-				<ul className='nav_menu_list'>
-					{NAVBAR_CONFIG.map(item => (
-						<li className='menu_list_item' key={item.label}>
-							<a href={'/' + item.link} className='menu_list_item_link'>
-								{item.label}
-							</a>
-						</li>
-					))}
-				</ul>
-			</div>
-			<div className='menu_right'>
-				<div className='navBtn'>
-					<button className='menuBtn'>Корзина</button>
-				</div>
+export const NavigationBar: React.FC = () => (
+	<div className={styles.header_nav_menu}>
+		<div className={styles.center}>
+			<ul className={styles.nav_menu_list}>
+				{NAVBAR_CONFIG.map(item => (
+					<li className={styles.menu_list_item} key={item.label}>
+						<a href={`/${item.link}`} className={styles.menu_list_item_link}>
+							{item.label}
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+		<div className='menu_right'>
+			<div className='navBtn'>
+				<button className='menuBtn' type='button'>
+					Корзина
+				</button>
 			</div>
 		</div>
-	)
-}
+	</div>
+)

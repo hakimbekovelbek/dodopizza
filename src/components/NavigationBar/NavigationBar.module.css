@@ -1,7 +1,8 @@
 .header_nav_menu {
 	display: flex;
-	margin: 0 auto;
+	justify-content: space-between;
 	align-items: center;
+	margin: 0 auto;
 }
 
 .nav_menu_list {

@@ -1,5 +1,5 @@
 export interface IContainer {
-	children: JSX.Element
+	children: any
 }
 
 export const Container: React.FC<IContainer> = ({ children }: IContainer) => (

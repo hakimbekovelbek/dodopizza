@@ -2,3 +2,9 @@
 	width: 80rem;
 	margin: auto;
 }
+
+@media only screen and (max-width: 1439px) {
+	.container {
+		width: 64rem;
+	}
+}

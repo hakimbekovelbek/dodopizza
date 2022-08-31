@@ -1,4 +1,4 @@
-import { Products } from './product'
+import { Product } from './product'
 
 export const MUTATIONS = [
 	{
@@ -581,7 +581,7 @@ export const MUTATIONS = [
 	},
 ]
 
-export const PIZZAS: Products = [
+export const PIZZAS: Array<Product> = [
 	{
 		id: 1,
 		title: 'Маргарита \uD83C\uDF31',

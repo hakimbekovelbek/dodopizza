@@ -1,3 +1,8 @@
+.card {
+	width: 292px;
+	cursor: pointer;
+}
+
 .card_img {
 	position: relative;
 	top: 3px;
@@ -6,8 +11,8 @@
 	transition: top 150ms ease-out;
 }
 
-.card {
-	width: 233px;
+.card_img:hover {
+	top: 0;
 }
 
 .card_title {
@@ -31,7 +36,7 @@
 }
 
 .card_price {
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 500;
 }
 
@@ -53,4 +58,14 @@
 .card_button:hover {
 	background-color: #ffd2b3;
 	color: #d15700;
+}
+
+@media only screen and (max-width: 1459px) {
+	.card {
+		width: 233px;
+	}
+
+	.card_price {
+		font-size: 16px;
+	}
 }

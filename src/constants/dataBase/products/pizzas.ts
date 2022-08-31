@@ -585,7 +585,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 1,
 		title: 'Маргарита \uD83C\uDF31',
-		price: 23,
+		price: 23000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/193863f2c1b443ca898c2abac06289ac_1875x1875.jpeg',
 		sizes: {
 			small: {
@@ -649,7 +649,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 2,
 		title: 'Четыре сезона',
-		price: 34,
+		price: 34000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/9f8bf5fd916441ee812eab57885885d5_584x584.jpeg',
 		sizes: {
 			small: {
@@ -713,7 +713,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 3,
 		title: 'Пепперони',
-		price: 45,
+		price: 45000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/2fe1e3fcc0f04d6a870b4cb075be8574_584x584.jpeg',
 		sizes: {
 			small: {
@@ -781,7 +781,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 4,
 		title: 'Пицца Мишка',
-		price: 123,
+		price: 123000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/3885af1560994d9b8f8ef892b7682bf4_584x584.jpeg',
 		sizes: {
 			small: {
@@ -811,7 +811,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 5,
 		title: 'Додо',
-		price: 56,
+		price: 56000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/de51de47773843fe95957caab3d7f974_584x584.png',
 		sizes: {
 			small: {
@@ -884,7 +884,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 6,
 		title: 'Сырный цыпленок',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/aa293f3b65874a8195bc1c36973ad465_584x584.jpeg',
 		sizes: {
 			small: {
@@ -957,7 +957,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 7,
 		title: 'Двойная пепперони',
-		price: 789,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/af667534db434f16a3f0ec68aedc8451_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1025,7 +1025,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 8,
 		title: 'Чиззи чеддер',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/30f2957b88154e94a2c8182c1b7465c4_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1098,7 +1098,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 9,
 		title: 'Чизбургер-пицца',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/b6e0567c71ba4c0891b67310b0587179_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1166,7 +1166,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 10,
 		title: 'Пицца-сердце',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/d53b558190ab473597515c4da9d14096_584x584.png',
 		sizes: {
 			medium: {
@@ -1196,7 +1196,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 11,
 		title: 'Гавайская',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/55e123ffb87c4403828b86089b58fb70_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1269,7 +1269,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 12,
 		title: 'Индейка и грибы',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/59a490e30eb143a3b9619346914474f6_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1342,7 +1342,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 13,
 		title: 'Овощи и грибы \uD83C\uDF31 ',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/00f0ca8bda3e48259408353a8c82d367_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1410,7 +1410,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 14,
 		title: 'Мексиканская \uD83C\uDF36️\uD83C\uDF36️ ',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/2837c461187f46b08cfca8c6715fe9e9_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1483,7 +1483,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 15,
 		title: 'Мясная',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/bf4c405c184c48108a666790acdbbb19_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1551,7 +1551,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 16,
 		title: 'Цыпленок барбекю',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/fa2d45e2596143c6989cf32350cd5f07_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1624,7 +1624,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 17,
 		title: 'Цыпленок ранч',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/d3a63d0911cf45ca920a7c82c2e03757_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1697,7 +1697,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 18,
 		title: 'Крэйзи пепперони',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/5dd7645b0a0d4cc5b82d6852ca1e1569_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1770,7 +1770,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 19,
 		title: 'Пикант',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/798ffa30f67a46fcac7153c869b1a1e0_584x584.png',
 		sizes: {
 			small: {
@@ -1838,7 +1838,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 20,
 		title: 'Супермясная',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/a19e34d8246a4c179fc62479e1174669_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1909,8 +1909,8 @@ export const PIZZAS: Array<Product> = [
 	},
 	{
 		id: 21,
-		title: '4 сыраа',
-		price: 78,
+		title: '4 сыра',
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/966d38e2a1dc4386afc53684fbdd3569_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1978,7 +1978,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 22,
 		title: 'Пицца "Вулкан" \uD83C\uDF36️\uD83C\uDF36️ ',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/1f6c13d493604d539cecdb2e91a6b908_584x584.jpeg',
 		sizes: {
 			small: {
@@ -2051,7 +2051,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 23,
 		title: 'Пицца-пирог \uD83C\uDF31 ',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/a88032047f394ef2a6c154ab9089e606_584x584.jpeg',
 		sizes: {
 			small: {
@@ -2119,7 +2119,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 24,
 		title: 'Деревенская',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/5e4998ff0b9a4409a447ba4e866f0edd_584x584.jpeg',
 		sizes: {
 			small: {
@@ -2192,7 +2192,7 @@ export const PIZZAS: Array<Product> = [
 	{
 		id: 25,
 		title: 'Деревенская',
-		price: 78,
+		price: 78000,
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/5e4998ff0b9a4409a447ba4e866f0edd_584x584.jpeg',
 		sizes: {
 			small: {

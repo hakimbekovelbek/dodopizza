@@ -44,7 +44,7 @@ export const NAVBAR_CONFIG = [
 	},
 ]
 
-export const PRODUCTS_TYPE: [ProductType] = [
+export const PRODUCTS_TYPE: Array<ProductType> = [
 	{
 		id: 1,
 		title: 'Пицца',

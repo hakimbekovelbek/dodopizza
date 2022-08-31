@@ -23,5 +23,5 @@ export interface ProductType {
 	id: any
 	title: string
 	type: string
-	products: [Product]
+	products: Array<Product>
 }

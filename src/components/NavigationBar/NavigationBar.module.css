@@ -47,3 +47,26 @@
 		opacity: 0.5;
 	}
 }
+
+.menuBtn {
+	height: 40px;
+	padding: 8px 20px;
+	font-size: 16px;
+	line-height: 24px;
+	border: none;
+	border-radius: 9999px;
+	font-family: 'Dodo';
+	background-color: rgb(255, 105, 0);
+	color: rgb(255, 255, 255);
+	transition: 200ms;
+}
+
+.menuBtn:hover {
+	background-color: rgb(232, 97, 0);
+	color: rgb(255, 255, 255);
+}
+
+.menuBtn:active {
+	background-color: rgb(255, 105, 0);
+	color: rgb(255, 165, 102);
+}

@@ -15,8 +15,8 @@ export const NavigationBar: React.FC = () => (
 			))}
 		</ul>
 		<div className='menu_right'>
-			<div className='navBtn'>
-				<button className='menuBtn' type='button'>
+			<div className={styles.navBtn}>
+				<button className={styles.menuBtn} type='button'>
 					Корзина
 				</button>
 			</div>

@@ -1,4 +1,11 @@
-import { Banner, NavigationBar, Container, ProductCard, Footer } from 'components'
+import {
+	Banner,
+	NavigationBar,
+	Container,
+	ProductCard,
+	Footer,
+	ProductsWrapper,
+} from 'components'
 import React from 'react'
 
 import { PIZZAS } from 'constants/dataBase/products/pizzas'
@@ -9,9 +16,11 @@ const App: React.FC = () => {
 			<Container>
 				<Banner />
 				<NavigationBar />
-				{PIZZAS.map(product => (
-					<ProductCard product={product} key={product.id} />
-				))}
+				<ProductsWrapper>
+					{PIZZAS.map(product => (
+						<ProductCard product={product} key={product.id} />
+					))}
+				</ProductsWrapper>
 			</Container>
 			<Footer />
 		</>

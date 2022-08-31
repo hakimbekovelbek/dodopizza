@@ -30,6 +30,7 @@ module.exports = {
 		'arrow-body-style': 0,
 		'no-undef': 0,
 		'react/jsx-no-useless-fragment': 0,
+		'react/destructuring-assignment': 0,
 	},
 	settings: {
 		'import/ignore': ['.css$', 'node_modules/*'],

@@ -1,3 +1,6 @@
+import { productsType } from './dataBase/products/product'
+import { PIZZAS } from './dataBase/products/pizzas'
+
 export const NAVBAR_CONFIG = [
 	{
 		label: 'Пицца',
@@ -38,5 +41,14 @@ export const NAVBAR_CONFIG = [
 	{
 		label: 'Прямой эфир',
 		link: 'live',
+	},
+]
+
+export const PRODUCTSTYPE: productsType = [
+	{
+		id: 1,
+		title: 'Пицца',
+		type: 'pizzas',
+		products: PIZZAS,
 	},
 ]

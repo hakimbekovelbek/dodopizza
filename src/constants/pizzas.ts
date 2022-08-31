@@ -1,4 +1,4 @@
-export const PIZZA_DATA = [
+const newVar = [
 	{
 		title: 'Маргарита \uD83C\uDF31',
 		sizes: {
@@ -3574,3 +3574,4 @@ export const PIZZA_DATA = [
 		],
 	},
 ]
+export const PIZZA_DATA = newVar

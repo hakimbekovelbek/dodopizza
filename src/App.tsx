@@ -1,15 +1,15 @@
 import { Banner, NavigationBar, Container, ProductCard } from 'components'
 import React from 'react'
 
-import { PIZZA_DATA } from 'constants/pizzas'
+import { PIZZAS } from 'constants/dataBase/products/pizzas'
 
 const App: React.FC = () => {
 	return (
 		<Container>
 			<Banner />
 			<NavigationBar />
-			{PIZZA_DATA.map(pizza => (
-				<ProductCard pizza={pizza} key={pizza.title} />
+			{PIZZAS.map(product => (
+				<ProductCard product={product} key={product.id} />
 			))}
 		</Container>
 	)

@@ -12,18 +12,16 @@ export interface Product {
 	addons?: Array<Array<any | boolean>>
 }
 
-export type Products = Array<Product>
-
-export interface comboProducts {
+export interface ComboProducts {
 	id: number | string
 	title: string
 	price: number
 	products: [Product]
 }
 
-export type productsType = Array<{
+export interface ProductType {
 	id: any
 	title: string
 	type: string
-	products: Products
-}>
+	products: [Product]
+}

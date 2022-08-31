@@ -1,4 +1,4 @@
-import { productsType } from './dataBase/products/product'
+import { ProductType } from './dataBase/products/product'
 import { PIZZAS } from './dataBase/products/pizzas'
 
 export const NAVBAR_CONFIG = [
@@ -44,7 +44,7 @@ export const NAVBAR_CONFIG = [
 	},
 ]
 
-export const PRODUCTSTYPE: productsType = [
+export const PRODUCTS_TYPE: [ProductType] = [
 	{
 		id: 1,
 		title: 'Пицца',

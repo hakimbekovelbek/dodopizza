@@ -144,49 +144,49 @@ export const Modal = () => {
 						<div className={styles.addons}>
 							<h5 className={styles.addonsTitle}>Добавить в пиццу</h5>
 							<div className={styles.addonsList}>
-								<div className='addons__card addon-card'>
+								<div className={classNames(styles.addonsCard, styles.addonCard)}>
 									<img
 										src='https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A219740A95611E9DBAED95FEBAA'
 										alt='Острый халапеньо'
-										className='addon-card__image'
+										className={styles.addonCardImage}
 									/>
-									<h6 className='addon-card__title'>Острый халапеньо</h6>
-									<p className='addon-card__price'>5 000 сум</p>
+									<h6 className={styles.addonCardTitle}>Острый халапеньо</h6>
+									<p className={styles.addonCardPrice}>5 000 сум</p>
 								</div>
 
-								<div className='addons__card addon-card'>
+								<div className={classNames(styles.addonsCard, styles.addonCard)}>
 									<img
 										src='https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A219740A95611EA0840DB86284E'
 										alt='Острый халапеньо'
-										className='addon-card__image'
+										className={styles.addonCardImage}
 									/>
-									<h6 className='addon-card__title'>Сыр моцарелла</h6>
-									<p className='addon-card__price'>18 000 сум</p>
+									<h6 className={styles.addonCardTitle}>Сыр моцарелла</h6>
+									<p className={styles.addonCardPrice}>18 000 сум</p>
 								</div>
 
-								<div className='addons__card addon-card'>
+								<div className={classNames(styles.addonsCard, styles.addonCard)}>
 									<img
 										src='https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A262427A95111E9DBAF25CA64B9'
 										alt='Острый халапеньо'
-										className='addon-card__image'
+										className={styles.addonCardImage}
 									/>
-									<h6 className='addon-card__title'>Ветчина</h6>
-									<p className='addon-card__price'>10 000 сум</p>
+									<h6 className={styles.addonCardTitle}>Ветчина</h6>
+									<p className={styles.addonCardPrice}>10 000 сум</p>
 								</div>
-								<div className='addons__card addon-card'>
+								<div className={classNames(styles.addonsCard, styles.addonCard)}>
 									<img
 										src='https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A262427A95111E9DBAF25CA64B9'
 										alt='Острый халапеньо'
-										className='addon-card__image'
+										className={styles.addonCardImage}
 									/>
-									<h6 className='addon-card__title'>Ветчина</h6>
-									<p className='addon-card__price'>10 000 сум</p>
+									<h6 className={styles.addonCardTitle}>Ветчина</h6>
+									<p className={styles.addonCardPrice}>10 000 сум</p>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<button className='modal__cart-btn' type='button'>
+					<button className={styles.modalCardBtn} type='button'>
 						Добавить в корзину за 85 000 сум
 					</button>
 				</div>

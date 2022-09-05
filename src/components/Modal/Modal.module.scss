@@ -1,0 +1,249 @@
+.sliderBtn {
+	position: relative;
+	width: 100%;
+	border-radius: 9999px;
+	background-color: #f3f3f7;
+	height: 32px;
+	display: flex;
+	overflow: hidden;
+	margin: 8px 0;
+}
+.sliderBtnSlider {
+	position: absolute;
+	box-sizing: border-box;
+	height: 32px;
+	padding: 2px;
+	transition: transform 0.2s ease-in-out;
+}
+.sliderBtnSliderSmall {
+	width: 33.3333333333%;
+}
+.sliderBtnSliderLarge {
+	width: 50%;
+}
+.sliderBtnSlider::before {
+	content: '';
+	display: block;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	box-shadow: #06053230 0 6px 20px;
+	border-radius: 9999px;
+}
+.sliderBtnItem {
+	flex-grow: 1;
+}
+.sliderBtnItemSmall {
+	width: 33.3333333333%;
+}
+.sliderBtnItemLarge {
+	width: 50%;
+}
+.sliderBtnItem label {
+	z-index: 1000;
+	position: relative;
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+	line-height: 32px;
+	cursor: pointer;
+}
+.sliderBtnItem label input {
+	display: none;
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: fixed;
+	z-index: 1000;
+	visibility: hidden;
+	display: flex;
+	box-shadow: #00000033 0 30px 60px;
+	background-color: #fff;
+	border-radius: 20px;
+}
+.modalClose {
+	position: absolute;
+	top: 14px;
+	right: -38px;
+	cursor: pointer;
+	width: 25px;
+	height: 25px;
+	border: none;
+	font: inherit;
+	color: #fff;
+	background-color: transparent;
+	transition: transform 0.1s ease-in-out;
+}
+.modalClose:hover {
+	transform: scale(1.11);
+}
+.modalActive {
+	visibility: visible;
+}
+.modalActive ~ .modalBg {
+	visibility: visible;
+}
+.modalMedium {
+	width: 924px;
+	height: 610px;
+}
+.modalBg {
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: black;
+	opacity: 0.55;
+	width: 100vw;
+	height: 150vh;
+	z-index: 10;
+}
+.modalLeft {
+	width: 530px;
+	height: 100%;
+}
+.modalRight {
+	width: 394px;
+	height: 100%;
+	padding: 30px;
+}
+.modalTitle {
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: 500;
+	padding: 0 3px 0;
+}
+.modalScroll {
+	height: 487px;
+	overflow: hidden scroll;
+	padding: 0 17px;
+	margin-bottom: 25px;
+}
+.modalScroll::-webkit-scrollbar {
+	width: 8px;
+}
+.modalScroll::-webkit-scrollbar-thumb {
+	background-color: rgba(57, 57, 57, 0.3);
+	border-radius: 4px;
+}
+.modal__cart-btn {
+	display: block;
+	width: 100%;
+	height: 48px;
+	padding: 12px 24px;
+	margin: auto;
+	border: none;
+	background-color: #ff6900;
+	font-family: inherit;
+	border-radius: 9999px;
+	color: white;
+	font-size: 16px;
+	line-height: 24px;
+}
+.modal__cart-btn:hover {
+	background-color: #e86100;
+	cursor: pointer;
+}
+.modalInfo {
+	font-family: 'Segoe UI', sans-serif;
+	color: #5c6370;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 1px 0 5px;
+}
+
+.ingredientList {
+	position: relative;
+	right: 2px;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	list-style-type: none;
+}
+.ingredientListItem {
+	margin-left: 2px;
+}
+.ingredientListItem[data-optional='true'] {
+	position: relative;
+	padding-right: 18px;
+	cursor: pointer;
+}
+.ingredientListItem[data-optional='true'] span {
+	border-bottom: 1px dashed #5c6370;
+}
+.ingredientListItem[data-optional='true']::after {
+	position: absolute;
+	top: 15%;
+	right: 0;
+	content: url('../../../public/close.svg');
+}
+.ingredientListItem[data-removed='true'] span {
+	border-bottom: 1px solid transparent;
+	text-decoration: line-through;
+}
+.ingredientListItem[data-removed='true']::after {
+	content: url('../../../public/return.svg');
+}
+
+.addonsTitle {
+	font-size: 18px;
+	color: #000;
+	line-height: 1;
+	font-weight: 500;
+	margin-top: 22px;
+	margin-bottom: 12px;
+}
+.addonsList {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.addonsCard {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	width: calc(33.3333% - 6px);
+	height: 166px;
+	margin-bottom: 8px;
+	background-color: #fff;
+	box-shadow: #0605321f 0 4px 20px;
+	border-radius: 12px;
+	transition: box-shadow 150ms ease-out;
+	cursor: pointer;
+	border: 1px solid white;
+}
+.addonsCardSelected {
+	box-shadow: #0605321f 0 0 8px;
+	border: 1px solid #ff6900;
+}
+.addonsCardSelected::after {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	content: url('../../../public/tick.svg');
+}
+
+.addon-card__image {
+	width: 90px;
+}
+.addon-card__title {
+	height: 32px;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+}
+.addon-card__price {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 500;
+	margin: 4px;
+}

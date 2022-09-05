@@ -2832,12 +2832,5 @@ export const PIZZAS: Array<Product> = [
 			// 	},
 			// },
 		},
-		// button: {
-		// 	title: 'Собрать',
-		// 	style: {
-		// 		'background-color': 'rgb(255, 105, 0);',
-		// 		color: 'rgb(255, 255, 255);',
-		// 	},
-		// },
 	},
 ]

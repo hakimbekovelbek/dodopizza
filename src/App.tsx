@@ -5,6 +5,7 @@ import {
 	ProductCard,
 	Footer,
 	ProductsWrapper,
+	Modal,
 } from 'components'
 import React from 'react'
 
@@ -16,6 +17,7 @@ const App: React.FC = () => {
 			<Container>
 				<Banner />
 				<NavigationBar />
+				<Modal />
 				<ProductsWrapper>
 					{PIZZAS.map(product => (
 						<ProductCard product={product} key={product.id} />

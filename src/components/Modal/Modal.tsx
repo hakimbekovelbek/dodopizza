@@ -1,8 +1,13 @@
 import classNames from 'classnames'
+import { useEffect, useRef } from 'react'
 // @ts-ignore
 import styles from './Modal.module.scss'
 
 export const Modal = () => {
+	const smallSliderRef = useRef<HTMLDivElement>(null)
+
+	useEffect(() => {})
+
 	return (
 		<>
 			<div
@@ -122,10 +127,20 @@ export const Modal = () => {
 									styles.sliderBtnSlider,
 									styles.sliderBtnSliderLarge
 								)}
+								ref={smallSliderRef}
 							/>
-							{['традиционное', 'тонкое'].map((text, index) => {
+							{['Традиционное', 'Тонкое'].map((text, index) => {
 								return (
-									<div className={styles.sliderBtnItem} data-offset={index}>
+									<div
+										className={styles.sliderBtnItem}
+										data-offset={index}
+										onClick={e => {
+											if (e.currentTarget.dataset.offset && smallSliderRef.current) {
+												smallSliderRef.current.style.transform = `translate(calc(100% * ${+e
+													.currentTarget.dataset.offset}))`
+											}
+										}}
+									>
 										<label>
 											<span>{text}</span>
 											<input type='radio' name='pizza-size' value='small' />

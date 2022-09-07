@@ -131,7 +131,7 @@
 	background-color: rgba(57, 57, 57, 0.3);
 	border-radius: 4px;
 }
-.modal__cart-btn {
+.modalCardBtn {
 	display: block;
 	width: 100%;
 	height: 48px;
@@ -145,7 +145,7 @@
 	font-size: 16px;
 	line-height: 24px;
 }
-.modal__cart-btn:hover {
+.modalCardBtn:hover {
 	background-color: #e86100;
 	cursor: pointer;
 }
@@ -232,16 +232,16 @@
 	content: url('../../../public/tick.svg');
 }
 
-.addon-card__image {
+.addonCardImage {
 	width: 90px;
 }
-.addon-card__title {
+.addonCardTitle {
 	height: 32px;
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 16px;
 }
-.addon-card__price {
+.addonCardPrice {
 	font-size: 16px;
 	line-height: 20px;
 	font-weight: 500;

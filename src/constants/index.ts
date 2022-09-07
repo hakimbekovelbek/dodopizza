@@ -1,5 +1,5 @@
-import { ProductType } from './dataBase/products/product'
-import { PIZZAS } from './dataBase/products/pizzas'
+import { ProductType } from './dataBase/interfces'
+import {COMBOS, DESSERTS, DRINKS, PIZZAS, PIZZAS_COMBO, SNAKS} from './dataBase';
 
 export const NAVBAR_CONFIG = [
 	{
@@ -44,11 +44,35 @@ export const NAVBAR_CONFIG = [
 	},
 ]
 
-export const PRODUCTS_TYPE: Array<ProductType> = [
+export const PRODUCTS_DATA: Array<ProductType> = [
 	{
 		id: 1,
 		title: 'Пицца',
 		type: 'pizzas',
-		products: PIZZAS,
+		products: [...PIZZAS_COMBO, ...PIZZAS],
+	},
+	{
+		id: 2,
+		title: 'Комбо',
+		type: 'combo',
+		products: COMBOS,
+	},
+	{
+		id: 3,
+		title: 'Закуски',
+		type: 'snacks',
+		products: SNAKS,
+	},
+	{
+		id: 4,
+		title: 'Десерты',
+		type: 'desserts',
+		products: DESSERTS,
+	},
+	{
+		id: 5,
+		title: 'Напитки',
+		type: 'drinks',
+		products: DRINKS,
 	},
 ]

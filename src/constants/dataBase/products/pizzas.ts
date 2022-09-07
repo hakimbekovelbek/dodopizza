@@ -1,580 +1,38 @@
-import { Product } from './product'
+import { ComboProducts, Product } from '../interfces'
 
-export const MUTATIONS = [
+export const PIZZAS_COMBO: Array<ComboProducts> = [
 	{
+		id: 1,
 		title: 'Пицца из половинок',
 		price: 90000,
-		imgs:
-			'https://dodopizza-a.akamaihd.net/static/Img/Products/1be8fabd45824fc7b042ccd213c20474_292x292.jpeg',
-		sizes: {
-			large: {
-				'Индейка и грибы': {
-					price: 45000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/c4fc7ce262f54dbda6e0d91b9896f4f8_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Индейка',
-							optional: true,
-						},
-						{
-							title: 'шампиньоны',
-							optional: true,
-						},
-						{
-							title: 'увеличенная порция моцареллы',
-							optional: false,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-					],
-				},
-				Гавайская: {
-					price: 46000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/534bc5c8c73546cda718f443a825b27d_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Ветчина',
-							optional: true,
-						},
-						{
-							title: 'ананасы',
-							optional: true,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-					],
-				},
-				'Двойная пепперони': {
-					price: 70000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/80c4430726de49feb312d10d8a6068d5_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Пепперони',
-							optional: false,
-						},
-						{
-							title: 'увеличенная порция моцареллы',
-							optional: false,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-					],
-				},
-				Маргарита: {
-					price: 45000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/90ccc3fb590d44e08c8d9d26a795a53b_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Увеличенная порция моцареллы',
-							optional: false,
-						},
-						{
-							title: 'томаты',
-							optional: true,
-						},
-						{
-							title: 'итальянские травы',
-							optional: true,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-					],
-				},
-				'Овощи и грибы': {
-					price: 55000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/3831b1994fb2416abf4bd833c11205b1_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Базилик',
-							optional: true,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-						{
-							title: 'кубики брынзы',
-							optional: true,
-						},
-						{
-							title: 'шампиньоны',
-							optional: true,
-						},
-						{
-							title: 'сладкий перец',
-							optional: true,
-						},
-						{
-							title: 'красный лук',
-							optional: true,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'маслины',
-							optional: true,
-						},
-						{
-							title: 'томаты',
-							optional: true,
-						},
-					],
-				},
-				Супермясная: {
-					price: 70000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/2ac13349c3c8430e8315c2a2545ebfc7_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Цыпленок',
-							optional: true,
-						},
-						{
-							title: ' пепперони',
-							optional: true,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-						{
-							title: 'охотничьи колбаски',
-							optional: true,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'индейка',
-							optional: true,
-						},
-					],
-				},
-				'Цыпленок барбекю': {
-					price: 55000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/70cb0ba134db403790ae58021049dc16_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Цыпленок',
-							optional: true,
-						},
-						{
-							title: 'соус барбекю',
-							optional: false,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-						{
-							title: 'красный лук',
-							optional: true,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'ветчина из цыпленка',
-							optional: true,
-						},
-					],
-				},
-				'Цыпленок ранч': {
-					price: 60000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/180425470627447da2ec56a0c76b09a5_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Цыпленок',
-							optional: true,
-						},
-						{
-							title: 'ветчина из цыпленка',
-							optional: true,
-						},
-						{
-							title: 'соус ранч',
-							optional: false,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'томаты',
-							optional: true,
-						},
-					],
-				},
-				'Чизбургер-пицца': {
-					price: 55000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/cd9cc0b8a0d846668ece101b3205c4a8_233x233.jpeg\n',
-					ingredients: [
-						{
-							title: 'Митболы из говядины',
-							optional: true,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'красный лук',
-							optional: true,
-						},
-						{
-							title: 'соленые огурчики',
-							optional: true,
-						},
-						{
-							title: 'томаты',
-							optional: true,
-						},
-						{
-							title: 'сырный соус',
-							optional: false,
-						},
-					],
-				},
-				Додо: {
-					price: 70000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/27da7759f9aa407fa09a16a00212d1a1_233x233.png',
-					ingredients: [
-						{
-							title: 'Индейка',
-							optional: true,
-						},
-						{
-							title: ' говядина',
-							optional: true,
-						},
-						{
-							title: 'пепперони',
-							optional: true,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'шампиньоны',
-							optional: true,
-						},
-						{
-							title: 'сладкий перец',
-							optional: true,
-						},
-						{
-							title: 'красный лук',
-							optional: true,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-						{
-							title: 'томаты',
-							optional: true,
-						},
-					],
-				},
-				Мексиканская: {
-					price: 60000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/e845f8ebb4d74d4c86a6da19265700f0_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Томатный соус',
-							optional: false,
-						},
-						{
-							title: 'сладкий перец',
-							optional: true,
-						},
-						{
-							title: 'красный лук',
-							optional: true,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'острый перец халапеньо',
-							optional: true,
-						},
-						{
-							title: 'томаты',
-							optional: true,
-						},
-						{
-							title: 'соус сальса',
-							optional: false,
-						},
-						{
-							title: 'цыплёнок',
-							optional: true,
-						},
-					],
-				},
-				Мясная: {
-					price: 60000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/05dd2affde804435bb188aa443d1975f_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Говядина',
-							optional: true,
-						},
-						{
-							title: 'индейка',
-							optional: true,
-						},
-						{
-							title: 'пепперони',
-							optional: true,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-					],
-				},
-				Пепперони: {
-					price: 60000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/ec1565dcb74f4e129511ecf4d76fece3_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Пепперони',
-							optional: false,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-					],
-				},
-				'Сырный цыпленок': {
-					price: 55000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/797f891b8c82481ba0b588d0feeaf8c6_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Цыпленок',
-							optional: true,
-						},
-						{
-							title: 'сырный соус',
-							optional: false,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'томаты',
-							optional: true,
-						},
-					],
-				},
-				'4 сыра': {
-					price: 70000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/21741e4128b64a409c85de303218a0b6_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Моцарелла',
-							optional: false,
-						},
-						{
-							title: 'сыр блю чиз',
-							optional: true,
-						},
-						{
-							title: 'сыр пармезан',
-							optional: true,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-						{
-							title: 'сыр чеддер',
-							optional: true,
-						},
-					],
-				},
-				'Крэйзи пепперони': {
-					price: 60000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/d579a32307f744e69d08e8e427909a27_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Цыпленок',
-							optional: true,
-						},
-						{
-							title: 'пепперони',
-							optional: true,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'кисло-сладкий соус',
-							optional: false,
-						},
-					],
-				},
-				Деревенская: {
-					price: 60000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/fc48680c7cc04f97a291df927c594916_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Картофель из печи',
-							optional: true,
-						},
-						{
-							title: 'соленые огурчики',
-							optional: true,
-						},
-						{
-							title: 'цыпленок',
-							optional: true,
-						},
-						{
-							title: 'соус ранч',
-							optional: false,
-						},
-						{
-							title: 'томаты',
-							optional: true,
-						},
-						{
-							title: 'красный лук',
-							optional: true,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-					],
-				},
-				'Чиззи чеддер': {
-					price: 65000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/060fbdeff2cc4fd9894d59a43af0bbf9_233x233.jpeg',
-					ingredients: [
-						{
-							title: 'Ветчина из цыпленка',
-							optional: true,
-						},
-						{
-							title: 'сладкий перец',
-							optional: true,
-						},
-						{
-							title: 'моцарелла',
-							optional: false,
-						},
-						{
-							title: 'томатный соус',
-							optional: false,
-						},
-						{
-							title: 'итальянские травы',
-							optional: true,
-						},
-						{
-							title: 'чеснок',
-							optional: true,
-						},
-						{
-							title: 'чеддер',
-							optional: true,
-						},
-					],
-				},
-				Пикант: {
-					price: 60000,
-					imgs:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/2ad1adbeb6ad4e05bcd6cd6c227dca43_233x233.png',
-					ingredients: [
-						{
-							title: 'красный лук',
-							optional: true,
-						},
-						{
-							title: 'бекон из говядины',
-							optional: true,
-						},
-						{
-							title: 'пепперони',
-							optional: true,
-						},
-						{
-							title: 'цыпленок',
-							optional: true,
-						},
-						{
-							title: 'сыр моцарелла',
-							optional: true,
-						},
-						{
-							title: 'пицца-соус ',
-							optional: true,
-						},
-					],
-				},
-			},
-		},
-		button: {
+		description: 'Соберите свою пиццу 35 см с двумя разными вкусами',
+		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/1be8fabd45824fc7b042ccd213c20474_292x292.jpeg',
+		products: [
+			['Индейка и грибы', 47000],
+			['Гавайская', 47000],
+			['Двойная пепперони', 55000],
+			['Маргарита', 40000],
+			['Овощи и грибы', 47000],
+			['Супермясная', 55000],
+			['Цыпленок барбекю', 50000],
+			['Цыпленок ранч', 50000],
+			['Чизбургер-пицца', 47000],
+			['Пепперони фреш', 45000],
+			['Додо', 55000],
+			['Мексиканская', 47000],
+			['Мясная', 50000],
+			['Пепперони', 47000],
+			['Сырная', 40000],
+			['Сырный цыпленок', 45000],
+			['4 сыра', 55000],
+			['Крэйзи пепперони', 50000],
+			['Чиззи чеддер', 47000],
+		],
+		// totalPrice:this.products.map((price:Array<any|number>, i:number):number=>(price[1]+price[i+1])),
+		buttonType: {
 			title: 'Собрать',
-			style: {
-				'background-color': 'rgb(255, 105, 0);',
+			buttonStyle: {
+				backgroundColor: 'rgb(255, 105, 0);',
 				color: 'rgb(255, 255, 255);',
 			},
 		},
@@ -583,10 +41,12 @@ export const MUTATIONS = [
 
 export const PIZZAS: Array<Product> = [
 	{
-		id: 1,
-		title: 'Маргарита \uD83C\uDF31',
-		price: 23000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/193863f2c1b443ca898c2abac06289ac_1875x1875.jpeg',
+		id: PIZZAS_COMBO.length + 1,
+		title: 'Чикен Бомбони',
+		price: 59000,
+		description:
+			'Сладкий перец, куриные кусочки, сыр моцарелла, красный лук, соус чили, смесь сыров чеддер и пармезан',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/5eca54ca8e3f4c4b986a26cdb7d7d09a_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 23,
@@ -635,28 +95,20 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, false],
-		],
-		addons: [
-			[1, false],
-			[2, true],
-		],
 	},
 	{
-		id: 2,
-		title: 'Четыре сезона',
-		price: 34000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/9f8bf5fd916441ee812eab57885885d5_584x584.jpeg',
+		id: PIZZAS_COMBO.length + 2,
+		title: 'Миу-пицца с пепперони и игрушкой',
+		price: 75000,
+		description:
+			'Сыр моцарелла, пепперони, смесь сыров чеддер и пармезан, пицца-соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/5eca54ca8e3f4c4b986a26cdb7d7d09a_584x584.jpeg',
 		sizes: {
 			small: {
-				price: 45000,
+				price: 23,
 				imgs: {
 					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/1776a29290ca413d84c55c5198758208_1875x1875.jpeg',
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/b29f2f85490e4e66bd0fe3f94543a884_1875x1875.jpeg',
 				},
 				nutrition: {
 					normal: {
@@ -665,12 +117,12 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 			medium: {
-				price: 70000,
+				price: 65000,
 				imgs: {
 					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/a5f87a1e2af84027a1e1abef62e5c854_584x584.jpeg',
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/193863f2c1b443ca898c2abac06289ac_1875x1875.jpeg',
 					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/9f8bf5fd916441ee812eab57885885d5_584x584.jpeg',
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/47dac5afdcc84aaaa5fe029f2f840c82_1875x1875.jpeg',
 				},
 				nutrition: {
 					thin: {
@@ -682,12 +134,12 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 			large: {
-				price: 85000,
+				price: 78000,
 				imgs: {
 					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/87bb64d7020548479b80b986f2b6ee60_584x584.jpeg',
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/0fc17661e9fe46dfbf18195b4eb52462_1875x1875.jpeg',
 					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/5979d4a645e147cdb1cea0d0dff03b43_584x584.jpeg',
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/b3936c7bc5bd4f9789af59b326dddf4b_1875x1875.jpeg',
 				},
 				nutrition: {
 					thin: {
@@ -699,22 +151,14 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 	},
 	{
-		id: 3,
+		id: PIZZAS_COMBO.length + 3,
 		title: 'Пепперони',
-		price: 45000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/2fe1e3fcc0f04d6a870b4cb075be8574_584x584.jpeg',
+		price: 55000,
+		description:
+			'Сыр моцарелла, пепперони, смесь сыров чеддер и пармезан, пицца-соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/c5c7d82b42584b0caaa2e6d32be39c92_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 55000,
@@ -763,32 +207,31 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Чеддер и пармезан',
+			'Томаты',
+			'Шампиньоны',
+			'Острый халапеньо',
+			'Брынза',
+			'Соленые огурчики',
+			'Сыр блю чиз',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 4,
-		title: 'Пицца Мишка',
-		price: 123000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/3885af1560994d9b8f8ef892b7682bf4_584x584.jpeg',
+		id: PIZZAS_COMBO.length + 4,
+		title: 'Чизбургер-пицца',
+		price: 49000,
+		description:
+			'Митболы из 100% говядины, сыр моцарелла из цельного молока, красный лук, соленые огурчики, томаты, сырный соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/b6e0567c71ba4c0891b67310b0587179_584x584.jpeg',
 		sizes: {
 			small: {
-				price: 48000,
+				price: 49000,
 				imgs: {
 					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/3885af1560994d9b8f8ef892b7682bf4_584x584.jpeg',
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/860c26411b49420492f767f78c523521_584x584.jpeg',
 				},
 				nutrition: {
 					normal: {
@@ -796,23 +239,61 @@ export const PIZZAS: Array<Product> = [
 					},
 				},
 			},
+			medium: {
+				price: 75000,
+				imgs: {
+					thin:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/f8582478695c4d4697d355ceab0671e4_584x584.jpeg',
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/b6e0567c71ba4c0891b67310b0587179_584x584.jpeg',
+				},
+				nutrition: {
+					thin: {
+						diameter: 30,
+					},
+					normal: {
+						diameter: 30,
+					},
+				},
+			},
+			large: {
+				price: 89000,
+				imgs: {
+					thin:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/dbe2cd44dea0482d89721511a1262cdd_584x584.jpeg',
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/8e41dcd24fd84cabae217926e45cfbf1_584x584.jpeg',
+				},
+				nutrition: {
+					thin: {
+						diameter: 35,
+					},
+					normal: {
+						diameter: 35,
+					},
+				},
+			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
+		addons: [
+			'Сыр моцарелла',
+			'Цыпленок',
+			'Чеддер и пармезан',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Шампиньоны',
+			'Острый халапеньо',
+			'Соленые огурчики',
+			'Сыр блю чиз',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 5,
+		id: PIZZAS_COMBO.length + 5,
 		title: 'Додо',
-		price: 56000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/de51de47773843fe95957caab3d7f974_584x584.png',
+		price: 65000,
+		description:
+			'Индейка, говядина, пепперони с говядиной, моцарелла из цельного молока, шампиньоны, сладкий перец, красный лук, томатный соус, томаты',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/de51de47773843fe95957caab3d7f974_584x584.png',
 		sizes: {
 			small: {
 				price: 65000,
@@ -866,26 +347,80 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Чеддер и пармезан',
+			'Говядина',
+			'Ветчина',
+			'Острый халапеньо',
+			'Брынза',
+			'Соленые огурчики',
+			'Сыр блю чиз',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 6,
+		id: PIZZAS_COMBO.length + 6,
+		title: 'Четыре сезона',
+		price: 55000,
+		description:
+			'Моцарелла из цельного молока, индейка, пепперони с говядиной, брынза, томаты, шампиньоны, томатный соус, итальянские травы',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/9f8bf5fd916441ee812eab57885885d5_584x584.jpeg',
+		sizes: {
+			small: {
+				price: 45000,
+				imgs: {
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/1776a29290ca413d84c55c5198758208_1875x1875.jpeg',
+				},
+				nutrition: {
+					normal: {
+						diameter: 25,
+					},
+				},
+			},
+			medium: {
+				price: 70000,
+				imgs: {
+					thin:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/a5f87a1e2af84027a1e1abef62e5c854_584x584.jpeg',
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/9f8bf5fd916441ee812eab57885885d5_584x584.jpeg',
+				},
+				nutrition: {
+					thin: {
+						diameter: 30,
+					},
+					normal: {
+						diameter: 30,
+					},
+				},
+			},
+			large: {
+				price: 85000,
+				imgs: {
+					thin:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/87bb64d7020548479b80b986f2b6ee60_584x584.jpeg',
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/5979d4a645e147cdb1cea0d0dff03b43_584x584.jpeg',
+				},
+				nutrition: {
+					thin: {
+						diameter: 35,
+					},
+					normal: {
+						diameter: 35,
+					},
+				},
+			},
+		},
+	},
+	{
+		id: PIZZAS_COMBO.length + 7,
 		title: 'Сырный цыпленок',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/aa293f3b65874a8195bc1c36973ad465_584x584.jpeg',
+		price: 45000,
+		description: 'Цыпленок, моцарелла из цельного молока, сырный соус, томаты',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/aa293f3b65874a8195bc1c36973ad465_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 45000,
@@ -939,26 +474,24 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Чеддер и пармезан',
+			'Говядина',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Шампиньоны',
+			'Острый халапеньо',
+			'Соленые огурчики',
+			'Сыр блю чиз',
 		],
 	},
 	{
-		id: 7,
+		id: PIZZAS_COMBO.length + 8,
 		title: 'Двойная пепперони',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/af667534db434f16a3f0ec68aedc8451_584x584.jpeg',
+		price: 65000,
+		description:
+			'Пепперони с говядиной, увеличенная порция моцареллы из цельного молока, томатный соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/af667534db434f16a3f0ec68aedc8451_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 69000,
@@ -1007,26 +540,28 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Цыпленок',
+			'Чеддер и пармезан',
+			'Говядина',
+			'Ветчина',
+			'Томаты',
+			'Шампиньоны',
+			'Острый халапеньо',
+			'Брынза',
+			'Соленые огурчики',
+			'Сыр блю чиз',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 8,
+		id: PIZZAS_COMBO.length + 9,
 		title: 'Чиззи чеддер',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/30f2957b88154e94a2c8182c1b7465c4_584x584.jpeg',
+		price: 55000,
+		description:
+			'Ветчина из цыпленка, сладкий перец, моцарелла из цельного молока, томатный соус, итальянские травы, чеснок, сыр чеддер',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/30f2957b88154e94a2c8182c1b7465c4_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 65000,
@@ -1080,32 +615,31 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Цыпленок',
+			'Говядина',
+			'Пикантная пепперони',
+			'Томаты',
+			'Шампиньоны',
+			'Острый халапеньо',
+			'Брынза',
+			'Соленые огурчики',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 9,
-		title: 'Чизбургер-пицца',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/b6e0567c71ba4c0891b67310b0587179_584x584.jpeg',
+		id: PIZZAS_COMBO.length + 10,
+		title: 'Маргарита \uD83C\uDF31',
+		price: 39000,
+		description:
+			'Увеличенная порция моцареллы из цельного молока, томаты, итальянские травы, томатный соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/47dac5afdcc84aaaa5fe029f2f840c82_584x584.jpeg',
 		sizes: {
 			small: {
-				price: 49000,
+				price: 23,
 				imgs: {
 					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/860c26411b49420492f767f78c523521_584x584.jpeg',
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/b29f2f85490e4e66bd0fe3f94543a884_1875x1875.jpeg',
 				},
 				nutrition: {
 					normal: {
@@ -1114,12 +648,12 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 			medium: {
-				price: 75000,
+				price: 65000,
 				imgs: {
 					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/f8582478695c4d4697d355ceab0671e4_584x584.jpeg',
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/193863f2c1b443ca898c2abac06289ac_1875x1875.jpeg',
 					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/b6e0567c71ba4c0891b67310b0587179_584x584.jpeg',
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/47dac5afdcc84aaaa5fe029f2f840c82_1875x1875.jpeg',
 				},
 				nutrition: {
 					thin: {
@@ -1131,12 +665,12 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 			large: {
-				price: 89000,
+				price: 78000,
 				imgs: {
 					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/dbe2cd44dea0482d89721511a1262cdd_584x584.jpeg',
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/0fc17661e9fe46dfbf18195b4eb52462_1875x1875.jpeg',
 					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/8e41dcd24fd84cabae217926e45cfbf1_584x584.jpeg',
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/b3936c7bc5bd4f9789af59b326dddf4b_1875x1875.jpeg',
 				},
 				nutrition: {
 					thin: {
@@ -1148,26 +682,27 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Цыпленок',
+			'Чеддер и пармезан',
+			'Говядина',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Шампиньоны',
+			'Ананасы',
+			'Острый халапеньо',
+			'Брынза',
+			'Соленые огурчики',
+			'Сыр блю чиз',
 		],
 	},
 	{
-		id: 10,
+		id: PIZZAS_COMBO.length + 11,
 		title: 'Пицца-сердце',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/d53b558190ab473597515c4da9d14096_584x584.png',
+		price: 75000,
+		description: 'Пицца-соус , сыр моцарелла, пепперони',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/d53b558190ab473597515c4da9d14096_584x584.png',
 		sizes: {
 			medium: {
 				price: 48000,
@@ -1182,95 +717,14 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 	},
 	{
-		id: 11,
-		title: 'Гавайская',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/55e123ffb87c4403828b86089b58fb70_584x584.jpeg',
-		sizes: {
-			small: {
-				price: 48000,
-				imgs: {
-					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/41f03c8108ab4aa28eb75d09d28b858f_584x584.jpeg',
-				},
-				nutrition: {
-					normal: {
-						weight: 440,
-						diameter: 25,
-					},
-				},
-			},
-			medium: {
-				price: 72000,
-				imgs: {
-					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/dff0a20f0e6443339ae3136b66c917c6_584x584.jpeg',
-					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/55e123ffb87c4403828b86089b58fb70_584x584.jpeg',
-				},
-				nutrition: {
-					thin: {
-						weight: 540,
-						diameter: 30,
-					},
-					normal: {
-						weight: 650,
-						diameter: 30,
-					},
-				},
-			},
-			large: {
-				price: 89000,
-				imgs: {
-					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/fe6e4f55a72b403b96bbeb3b6faa19ba_584x584.jpeg',
-					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/594c0a4876374baaabbb3f8679348711_584x584.jpeg',
-				},
-				nutrition: {
-					thin: {
-						weight: 750,
-						diameter: 35,
-					},
-					normal: {
-						weight: 870,
-						diameter: 35,
-					},
-				},
-			},
-		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
-		addons: [
-			[1, false],
-			[2, true],
-		],
-	},
-	{
-		id: 12,
+		id: PIZZAS_COMBO.length + 12,
 		title: 'Индейка и грибы',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/59a490e30eb143a3b9619346914474f6_584x584.jpeg',
+		price: 49000,
+		description:
+			'Индейка, шампиньоны, увеличенная порция моцареллы из цельного молока, томатный соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/59a490e30eb143a3b9619346914474f6_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 42000,
@@ -1324,26 +778,102 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Цыпленок',
+			'Чеддер и пармезан',
+			'Говядина',
+			'Пикантная пепперони',
+			'Красный лук',
+			'Томаты',
+			'Шампиньоны',
+			'Острый халапеньо',
+			'Соленые огурчики',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 13,
+		id: PIZZAS_COMBO.length + 13,
+		title: 'Гавайская',
+		price: 49000,
+		description:
+			'Ветчина из цыпленка, ананасы, моцарелла из цельного молока, томатный соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/55e123ffb87c4403828b86089b58fb70_584x584.jpeg',
+		sizes: {
+			small: {
+				price: 48000,
+				imgs: {
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/41f03c8108ab4aa28eb75d09d28b858f_584x584.jpeg',
+				},
+				nutrition: {
+					normal: {
+						weight: 440,
+						diameter: 25,
+					},
+				},
+			},
+			medium: {
+				price: 72000,
+				imgs: {
+					thin:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/dff0a20f0e6443339ae3136b66c917c6_584x584.jpeg',
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/55e123ffb87c4403828b86089b58fb70_584x584.jpeg',
+				},
+				nutrition: {
+					thin: {
+						weight: 540,
+						diameter: 30,
+					},
+					normal: {
+						weight: 650,
+						diameter: 30,
+					},
+				},
+			},
+			large: {
+				price: 89000,
+				imgs: {
+					thin:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/fe6e4f55a72b403b96bbeb3b6faa19ba_584x584.jpeg',
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/594c0a4876374baaabbb3f8679348711_584x584.jpeg',
+				},
+				nutrition: {
+					thin: {
+						weight: 750,
+						diameter: 35,
+					},
+					normal: {
+						weight: 870,
+						diameter: 35,
+					},
+				},
+			},
+		},
+		addons: [
+			'Сыр моцарелла',
+			'Цыпленок',
+			'Чеддер и пармезан',
+			'Говядина',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Красный лук',
+			'Томаты',
+			'Шампиньоны',
+			'Острый халапеньо',
+			'Брынза',
+			'Сыр блю чиз',
+		],
+	},
+	{
+		id: PIZZAS_COMBO.length + 14,
 		title: 'Овощи и грибы \uD83C\uDF31 ',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/00f0ca8bda3e48259408353a8c82d367_584x584.jpeg',
+		price: 55000,
+		description:
+			'Моцарелла из цельного молока, брынза, шампиньоны, сладкий перец, томаты, томатный соус, базилик, красный лук',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/f4bbf854891b4bcf92fa0c08d8951181_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 48000,
@@ -1392,26 +922,24 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Цыпленок',
+			'Говядина',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Ананасы',
+			'Острый халапеньо',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 14,
+		id: PIZZAS_COMBO.length + 15,
 		title: 'Мексиканская \uD83C\uDF36️\uD83C\uDF36️ ',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/2837c461187f46b08cfca8c6715fe9e9_584x584.jpeg',
+		price: 55000,
+		description:
+			'Цыплёнок, моцарелла из цельного молока, томатный соус, перец халапеньо, сладкий перец, соус сальса, томаты, красный лук',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/2837c461187f46b08cfca8c6715fe9e9_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 56000,
@@ -1465,26 +993,24 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Чеддер и пармезан',
+			'Говядина',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Острый халапеньо',
+			'Сыр блю чиз',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 15,
+		id: PIZZAS_COMBO.length + 16,
 		title: 'Мясная',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/bf4c405c184c48108a666790acdbbb19_584x584.jpeg',
+		price: 59000,
+		description:
+			'Митболы из говядины, индейка, пепперони с говядиной, моцарелла из цельного молока, томатный соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/bf4c405c184c48108a666790acdbbb19_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 59000,
@@ -1533,26 +1059,27 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Цыпленок',
+			'Чеддер и пармезан',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Томаты',
+			'Шампиньоны',
+			'Брынза',
+			'Острый халапеньо',
+			'Сыр блю чиз',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 16,
+		id: PIZZAS_COMBO.length + 17,
 		title: 'Цыпленок барбекю',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/fa2d45e2596143c6989cf32350cd5f07_584x584.jpeg',
+		price: 59000,
+		description:
+			'Цыпленок, моцарелла из цельного молока, ветчина из цыпленка, соус барбекю, томатный соус, красный лук',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/fa2d45e2596143c6989cf32350cd5f07_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 52000,
@@ -1606,26 +1133,25 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Чеддер и пармезан',
+			'Говядина',
+			'Пикантная пепперони',
+			'Томаты',
+			'Брынза',
+			'Острый халапеньо',
+			'Соленые огурчики',
+			'Сыр блю чиз',
 		],
 	},
 	{
-		id: 17,
+		id: PIZZAS_COMBO.length + 18,
 		title: 'Цыпленок ранч',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/d3a63d0911cf45ca920a7c82c2e03757_584x584.jpeg',
+		price: 59000,
+		description:
+			'Цыпленок, моцарелла из цельного молока, ветчина из цыпленка, соус ранч, томаты',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/d3a63d0911cf45ca920a7c82c2e03757_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 55000,
@@ -1679,26 +1205,25 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Чеддер и пармезан',
+			'Говядина',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Шампиньоны',
+			'Ананасы',
+			'Острый халапеньо',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 18,
+		id: PIZZAS_COMBO.length + 19,
 		title: 'Крэйзи пепперони',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/5dd7645b0a0d4cc5b82d6852ca1e1569_584x584.jpeg',
+		price: 59000,
+		description:
+			'Цыпленок, пепперони с говядиной, моцарелла из цельного молока, кисло-сладкий соус, томатный соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/5dd7645b0a0d4cc5b82d6852ca1e1569_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 59000,
@@ -1752,94 +1277,29 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Цыпленок',
+			'Чеддер и пармезан',
+			'Говядина',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Томаты',
+			'Шампиньоны',
+			'Ананасы',
+			'Брынза',
+			'Острый халапеньо',
+			'Соленые огурчики',
+			'Сыр блю чиз',
 		],
 	},
 	{
-		id: 19,
-		title: 'Пикант',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/798ffa30f67a46fcac7153c869b1a1e0_584x584.png',
-		sizes: {
-			small: {
-				price: 65000,
-				imgs: {
-					normal:
-						'\thttps://dodopizza-a.akamaihd.net/static/Img/Products/3012febb661548d5a3ce2e70cc73be62_584x584.png',
-				},
-				nutrition: {
-					normal: {
-						diameter: 25,
-					},
-				},
-			},
-			medium: {
-				price: 80000,
-				imgs: {
-					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/143bd05c842d4ca3a93487ce56055bdc_584x584.jpeg',
-					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/798ffa30f67a46fcac7153c869b1a1e0_584x584.png',
-				},
-				nutrition: {
-					thin: {
-						diameter: 30,
-					},
-					normal: {
-						diameter: 30,
-					},
-				},
-			},
-			large: {
-				price: 99000,
-				imgs: {
-					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/04f27df6efef40e9af72198a6e80cb42_584x584.jpeg',
-					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/04f27df6efef40e9af72198a6e80cb42_584x584.jpeg',
-				},
-				nutrition: {
-					thin: {
-						diameter: 35,
-					},
-					normal: {
-						diameter: 35,
-					},
-				},
-			},
-		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
-		addons: [
-			[1, false],
-			[2, true],
-		],
-	},
-	{
-		id: 20,
+		id: PIZZAS_COMBO.length + 20,
 		title: 'Супермясная',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/a19e34d8246a4c179fc62479e1174669_584x584.jpeg',
+		price: 65000,
+		description:
+			'Цыпленок, пепперони с говядиной, моцарелла из цельного молока, индейка, охотничьи колбаски, томатный соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/a19e34d8246a4c179fc62479e1174669_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 234,
@@ -1892,26 +1352,100 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Чеддер и пармезан',
+			'Говядина',
+			'Ветчина',
+			'Сладкий перец',
+			'Томаты',
+			'Шампиньоны',
+			'Брынза',
+			'Острый халапеньо',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 21,
+		id: PIZZAS_COMBO.length + 21,
+		title: 'Пепперони фреш',
+		price: 45000,
+		description:
+			'Пепперони с говядиной, увеличенная порция моцареллы из цельного молока, томаты, томатный соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/0abcc6d258c94b3bb1412b6cb644dec5_584x584.jpeg',
+		sizes: {
+			small: {
+				price: 234,
+				imgs: {
+					normal: 'Супермясная',
+				},
+				nutrition: {
+					normal: {
+						weight: 440,
+						diameter: 25,
+					},
+				},
+			},
+			medium: {
+				price: 90000,
+				imgs: {
+					thin:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/317d3599be4c45b2adfca2d2ca7773d5_584x584.jpeg',
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/a19e34d8246a4c179fc62479e1174669_584x584.jpeg',
+				},
+				nutrition: {
+					thin: {
+						weight: 530,
+						diameter: 30,
+					},
+					normal: {
+						weight: 640,
+						diameter: 30,
+					},
+				},
+			},
+			large: {
+				price: 105000,
+				imgs: {
+					thin:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/df4d7d8bab424f64b443886d7ed9b803_584x584.jpeg',
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/7d9f0c29d5da4e079913e377af8b31de_584x584.jpeg',
+				},
+				nutrition: {
+					thin: {
+						weight: 750,
+						diameter: 35,
+					},
+					normal: {
+						weight: 870,
+						diameter: 35,
+					},
+				},
+			},
+		},
+		addons: [
+			'Сыр моцарелла',
+			'Цыпленок',
+			'Чеддер и пармезан',
+			'Говядина',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Сладкий перец',
+			'Шампиньоны',
+			'Ананасы',
+			'Острый халапеньо',
+			'Соленые огурчики',
+			'Итальянские травы',
+		],
+	},
+	{
+		id: PIZZAS_COMBO.length + 22,
 		title: '4 сыра',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/966d38e2a1dc4386afc53684fbdd3569_584x584.jpeg',
+		price: 65000,
+		description:
+			'Моцарелла из цельного молока, сыр блю чиз, сыр пармезан, сыр чеддер, томатный соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/966d38e2a1dc4386afc53684fbdd3569_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 63000,
@@ -1960,26 +1494,25 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Цыпленок',
+			'Говядина',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Томаты',
+			'Шампиньоны',
+			'Острый халапеньо',
+			'Соленые огурчики',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 22,
+		id: PIZZAS_COMBO.length + 23,
 		title: 'Пицца "Вулкан" \uD83C\uDF36️\uD83C\uDF36️ ',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/1f6c13d493604d539cecdb2e91a6b908_584x584.jpeg',
+		price: 65000,
+		description:
+			'Пепперони с говядиной, моцарелла из цельного молока, говядина, перец халапеньо, соус барбекю, сладкий перец, томаты, красный лук',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/1f6c13d493604d539cecdb2e91a6b908_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 69000,
@@ -2033,26 +1566,95 @@ export const PIZZAS: Array<Product> = [
 				},
 			},
 		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
 		addons: [
-			[1, false],
-			[2, true],
+			'Сыр моцарелла',
+			'Цыпленок',
+			'Чеддер и пармезан',
+			'Ветчина',
+			'Шампиньоны',
+			'Ананасы',
+			'Брынза',
+			'Соленые огурчики',
+			'Сыр блю чиз',
+			'Итальянские травы',
 		],
 	},
 	{
-		id: 23,
+		id: PIZZAS_COMBO.length + 24,
+		title: 'Сырная 🌱',
+		price: 39000,
+		description: 'Увеличенная порция моцареллы из цельного молока, томатный соус',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/336673eb89994f878f6df5589f6cedf9_584x584.jpeg',
+		sizes: {
+			small: {
+				price: 55000,
+				imgs: {
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/6ac97923c3b447d0becd60e64e747939_584x584.jpeg',
+				},
+				nutrition: {
+					normal: {
+						weight: 510,
+						diameter: 25,
+					},
+				},
+			},
+			medium: {
+				price: 78000,
+				imgs: {
+					thin:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/51cba65b062f41f6a494f7ea3ad0b883_584x584.jpeg',
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/5e4998ff0b9a4409a447ba4e866f0edd_584x584.jpeg',
+				},
+				nutrition: {
+					thin: {
+						weight: 680,
+						diameter: 30,
+					},
+					normal: {
+						weight: 790,
+						diameter: 30,
+					},
+				},
+			},
+			large: {
+				price: 92000,
+				imgs: {
+					thin:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/14f087555f3d4a359e997ffc984df980_584x584.jpeg',
+					normal:
+						'https://dodopizza-a.akamaihd.net/static/Img/Products/ed7ae608fd2648ac9f961f2cbfb0e5c3_584x584.jpeg',
+				},
+				nutrition: {
+					thin: {
+						weight: 960,
+						diameter: 35,
+					},
+					normal: {
+						weight: 1080,
+						diameter: 35,
+					},
+				},
+			},
+		},
+		addons: [
+			'Цыпленок',
+			'Говядина',
+			'Ветчина',
+			'Пикантная пепперони',
+			'Томаты',
+			'Шампиньоны',
+			'Острый халапеньо',
+			'Соленые огурчики',
+		],
+	},
+	{
+		id: PIZZAS_COMBO.length + 25,
 		title: 'Пицца-пирог \uD83C\uDF31 ',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/a88032047f394ef2a6c154ab9089e606_584x584.jpeg',
+		price: 55000,
+		description: 'Ананасы, брусника, сгущенное молоко',
+		img: 'https://cdn.dodostatic.net/static/Img/Products/a88032047f394ef2a6c154ab9089e606_584x584.jpeg',
 		sizes: {
 			small: {
 				price: 55000,
@@ -2100,737 +1702,6 @@ export const PIZZAS: Array<Product> = [
 					},
 				},
 			},
-		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
-		addons: [
-			[1, false],
-			[2, true],
-		],
-	},
-	{
-		id: 24,
-		title: 'Деревенская',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/5e4998ff0b9a4409a447ba4e866f0edd_584x584.jpeg',
-		sizes: {
-			small: {
-				price: 55000,
-				imgs: {
-					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/6ac97923c3b447d0becd60e64e747939_584x584.jpeg',
-				},
-				nutrition: {
-					normal: {
-						weight: 510,
-						diameter: 25,
-					},
-				},
-			},
-			medium: {
-				price: 78000,
-				imgs: {
-					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/51cba65b062f41f6a494f7ea3ad0b883_584x584.jpeg',
-					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/5e4998ff0b9a4409a447ba4e866f0edd_584x584.jpeg',
-				},
-				nutrition: {
-					thin: {
-						weight: 680,
-						diameter: 30,
-					},
-					normal: {
-						weight: 790,
-						diameter: 30,
-					},
-				},
-			},
-			large: {
-				price: 92000,
-				imgs: {
-					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/14f087555f3d4a359e997ffc984df980_584x584.jpeg',
-					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/ed7ae608fd2648ac9f961f2cbfb0e5c3_584x584.jpeg',
-				},
-				nutrition: {
-					thin: {
-						weight: 960,
-						diameter: 35,
-					},
-					normal: {
-						weight: 1080,
-						diameter: 35,
-					},
-				},
-			},
-		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
-		addons: [
-			[1, false],
-			[2, true],
-		],
-	},
-	{
-		id: 25,
-		title: 'Деревенская',
-		price: 78000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/5e4998ff0b9a4409a447ba4e866f0edd_584x584.jpeg',
-		sizes: {
-			small: {
-				price: 55000,
-				imgs: {
-					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/6ac97923c3b447d0becd60e64e747939_584x584.jpeg',
-				},
-				nutrition: {
-					normal: {
-						weight: 510,
-						diameter: 25,
-					},
-				},
-			},
-			medium: {
-				price: 78000,
-				imgs: {
-					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/51cba65b062f41f6a494f7ea3ad0b883_584x584.jpeg',
-					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/5e4998ff0b9a4409a447ba4e866f0edd_584x584.jpeg',
-				},
-				nutrition: {
-					thin: {
-						weight: 680,
-						diameter: 30,
-					},
-					normal: {
-						weight: 790,
-						diameter: 30,
-					},
-				},
-			},
-			large: {
-				price: 92000,
-				imgs: {
-					thin:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/14f087555f3d4a359e997ffc984df980_584x584.jpeg',
-					normal:
-						'https://dodopizza-a.akamaihd.net/static/Img/Products/ed7ae608fd2648ac9f961f2cbfb0e5c3_584x584.jpeg',
-				},
-				nutrition: {
-					thin: {
-						weight: 960,
-						diameter: 35,
-					},
-					normal: {
-						weight: 1080,
-						diameter: 35,
-					},
-				},
-			},
-		},
-		ingredients: [
-			[1, false],
-			[2, true],
-			[3, true],
-			[4, true],
-			[5, true],
-			[6, true],
-			[7, false],
-			[8, true],
-		],
-		addons: [
-			[1, false],
-			[2, true],
-		],
-	},
-	{
-		id: 26,
-		title: 'Пицца из половинок',
-		price: 90000,
-		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/1be8fabd45824fc7b042ccd213c20474_292x292.jpeg',
-		sizes: {
-			// large: {
-			// 	'Индейка и грибы': {
-			// 		price: 45000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/c4fc7ce262f54dbda6e0d91b9896f4f8_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Индейка',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'шампиньоны',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'увеличенная порция моцареллы',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 		],
-			// 	},
-			// 	Гавайская: {
-			// 		price: 46000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/534bc5c8c73546cda718f443a825b27d_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Ветчина',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'ананасы',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 		],
-			// 	},
-			// 	'Двойная пепперони': {
-			// 		price: 70000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/80c4430726de49feb312d10d8a6068d5_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Пепперони',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'увеличенная порция моцареллы',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 		],
-			// 	},
-			// 	Маргарита: {
-			// 		price: 45000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/90ccc3fb590d44e08c8d9d26a795a53b_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Увеличенная порция моцареллы',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томаты',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'итальянские травы',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 		],
-			// 	},
-			// 	'Овощи и грибы': {
-			// 		price: 55000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/3831b1994fb2416abf4bd833c11205b1_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Базилик',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'кубики брынзы',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'шампиньоны',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'сладкий перец',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'красный лук',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'маслины',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'томаты',
-			// 				optional: true,
-			// 			},
-			// 		],
-			// 	},
-			// 	Супермясная: {
-			// 		price: 70000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/2ac13349c3c8430e8315c2a2545ebfc7_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Цыпленок',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: ' пепперони',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'охотничьи колбаски',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'индейка',
-			// 				optional: true,
-			// 			},
-			// 		],
-			// 	},
-			// 	'Цыпленок барбекю': {
-			// 		price: 55000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/70cb0ba134db403790ae58021049dc16_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Цыпленок',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'соус барбекю',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'красный лук',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'ветчина из цыпленка',
-			// 				optional: true,
-			// 			},
-			// 		],
-			// 	},
-			// 	'Цыпленок ранч': {
-			// 		price: 60000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/180425470627447da2ec56a0c76b09a5_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Цыпленок',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'ветчина из цыпленка',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'соус ранч',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томаты',
-			// 				optional: true,
-			// 			},
-			// 		],
-			// 	},
-			// 	'Чизбургер-пицца': {
-			// 		price: 55000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/cd9cc0b8a0d846668ece101b3205c4a8_233x233.jpeg\n',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Митболы из говядины',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'красный лук',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'соленые огурчики',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'томаты',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'сырный соус',
-			// 				optional: false,
-			// 			},
-			// 		],
-			// 	},
-			// 	Додо: {
-			// 		price: 70000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/27da7759f9aa407fa09a16a00212d1a1_233x233.png',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Индейка',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: ' говядина',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'пепперони',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'шампиньоны',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'сладкий перец',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'красный лук',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томаты',
-			// 				optional: true,
-			// 			},
-			// 		],
-			// 	},
-			// 	Мексиканская: {
-			// 		price: 60000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/e845f8ebb4d74d4c86a6da19265700f0_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Томатный соус',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'сладкий перец',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'красный лук',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'острый перец халапеньо',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'томаты',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'соус сальса',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'цыплёнок',
-			// 				optional: true,
-			// 			},
-			// 		],
-			// 	},
-			// 	Мясная: {
-			// 		price: 60000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/05dd2affde804435bb188aa443d1975f_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Говядина',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'индейка',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'пепперони',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 		],
-			// 	},
-			// 	Пепперони: {
-			// 		price: 60000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/ec1565dcb74f4e129511ecf4d76fece3_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Пепперони',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 		],
-			// 	},
-			// 	'Сырный цыпленок': {
-			// 		price: 55000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/797f891b8c82481ba0b588d0feeaf8c6_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Цыпленок',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'сырный соус',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томаты',
-			// 				optional: true,
-			// 			},
-			// 		],
-			// 	},
-			// 	'4 сыра': {
-			// 		price: 70000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/21741e4128b64a409c85de303218a0b6_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'сыр блю чиз',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'сыр пармезан',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'сыр чеддер',
-			// 				optional: true,
-			// 			},
-			// 		],
-			// 	},
-			// 	'Крэйзи пепперони': {
-			// 		price: 60000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/d579a32307f744e69d08e8e427909a27_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Цыпленок',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'пепперони',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'кисло-сладкий соус',
-			// 				optional: false,
-			// 			},
-			// 		],
-			// 	},
-			// 	Деревенская: {
-			// 		price: 60000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/fc48680c7cc04f97a291df927c594916_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Картофель из печи',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'соленые огурчики',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'цыпленок',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'соус ранч',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томаты',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'красный лук',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 		],
-			// 	},
-			// 	'Чиззи чеддер': {
-			// 		price: 65000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/060fbdeff2cc4fd9894d59a43af0bbf9_233x233.jpeg',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'Ветчина из цыпленка',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'сладкий перец',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'моцарелла',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'томатный соус',
-			// 				optional: false,
-			// 			},
-			// 			{
-			// 				title: 'итальянские травы',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'чеснок',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'чеддер',
-			// 				optional: true,
-			// 			},
-			// 		],
-			// 	},
-			// 	Пикант: {
-			// 		price: 60000,
-			// 		imgs:
-			// 			'https://dodopizza-a.akamaihd.net/static/Img/Products/2ad1adbeb6ad4e05bcd6cd6c227dca43_233x233.png',
-			// 		ingredients: [
-			// 			{
-			// 				title: 'красный лук',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'бекон из говядины',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'пепперони',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'цыпленок',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'сыр моцарелла',
-			// 				optional: true,
-			// 			},
-			// 			{
-			// 				title: 'пицца-соус ',
-			// 				optional: true,
-			// 			},
-			// 		],
-			// 	},
-			// },
 		},
 	},
 ]

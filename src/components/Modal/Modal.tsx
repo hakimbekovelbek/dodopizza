@@ -98,26 +98,22 @@ export const Modal = () => {
 									styles.sliderBtnSlider,
 									styles.sliderBtnSliderSmall
 								)}
-								// style='transform: translateX(100%)'
+								style={{ transform: 'translateX(100%)' }}
 							/>
-							<div className={styles.sliderBtnItem} data-offset='0'>
-								<label>
-									Маленькая
-									<input type='radio' name='pizza-size' value='small' />
-								</label>
-							</div>
-							<div className={styles.sliderBtnItem} data-offset='1'>
-								<label>
-									Средняя
-									<input type='radio' name='pizza-size' value='medium' checked />
-								</label>
-							</div>
-							<div className={styles.sliderBtnItem} data-offset='2'>
-								<label>
-									Большая
-									<input type='radio' name='pizza-size' value='large' />
-								</label>
-							</div>
+							{['Маленькая', 'Средняя', 'Большая'].map((text, index) => {
+								return (
+									<div
+										className={styles.sliderBtnItem}
+										data-offset={index}
+										onClick={() => {}}
+									>
+										<label>
+											<span>{text}</span>
+											<input type='radio' name='pizza-size' value='small' />
+										</label>
+									</div>
+								)
+							})}
 						</div>
 
 						<div className={classNames(styles.modalSliderBtn, styles.sliderBtn)}>
@@ -127,18 +123,16 @@ export const Modal = () => {
 									styles.sliderBtnSliderLarge
 								)}
 							/>
-							<div className={styles.sliderBtnItem} data-offset='0'>
-								<label>
-									традиционное
-									<input type='radio' name='dough-type' value='regular' />
-								</label>
-							</div>
-							<div className={styles.sliderBtnItem} data-offset='1'>
-								<label>
-									тонкое
-									<input type='radio' name='dough-type' value='thin' />
-								</label>
-							</div>
+							{['традиционное', 'тонкое'].map((text, index) => {
+								return (
+									<div className={styles.sliderBtnItem} data-offset={index}>
+										<label>
+											<span>{text}</span>
+											<input type='radio' name='pizza-size' value='small' />
+										</label>
+									</div>
+								)
+							})}
 						</div>
 
 						<div className={styles.addons}>

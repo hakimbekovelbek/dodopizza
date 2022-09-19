@@ -1,20 +1,49 @@
 import classNames from 'classnames'
-import { useEffect, useRef } from 'react'
+import { useRef, useEffect } from 'react'
 // @ts-ignore
 import styles from './Modal.module.scss'
 
-export const Modal = () => {
+interface IModalProps {
+	isModalOpen: boolean
+	setIsModalOpen: Function
+}
+export const Modal: React.FC<IModalProps> = ({
+	isModalOpen,
+	setIsModalOpen,
+}: IModalProps) => {
 	const smallSliderRef = useRef<HTMLDivElement>(null)
 
-	useEffect(() => {})
+	useEffect(() => {
+		window.addEventListener('keydown', e => {
+			if (e.key === 'Escape') {
+				setIsModalOpen(false)
+			}
+		})
+
+		if (isModalOpen) {
+			document.body.style.overflow = 'hidden'
+			document.body.style.marginRight = '15px'
+		} else {
+			document.body.style.overflow = ''
+			document.body.style.marginRight = ''
+		}
+	})
 
 	return (
 		<>
 			<div
-				className={classNames(styles.modal, styles.modalMedium, styles.modalActive)}
+				className={classNames(styles.modal, styles.modalMedium, {
+					[styles.modalActive]: isModalOpen,
+				})}
 			>
-				<button className={styles.modalClose} type='button'>
-					<img src='modal_close.svg' alt='x' />
+				<button
+					className={styles.modalClose}
+					type='button'
+					onClick={() => {
+						setIsModalOpen(false)
+					}}
+				>
+					<img src='modal_close.svg' alt='Close button' />
 				</button>
 				<div className={styles.modalLeft} />
 				<div className={styles.modalRight}>
@@ -153,44 +182,38 @@ export const Modal = () => {
 						<div className={styles.addons}>
 							<h5 className={styles.addonsTitle}>Добавить в пиццу</h5>
 							<div className={styles.addonsList}>
-								<div className={classNames(styles.addonsCard, styles.addonCard)}>
-									<img
-										src='https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A219740A95611E9DBAED95FEBAA'
-										alt='Острый халапеньо'
-										className={styles.addonCardImage}
-									/>
-									<h6 className={styles.addonCardTitle}>Острый халапеньо</h6>
-									<p className={styles.addonCardPrice}>5 000 сум</p>
-								</div>
-
-								<div className={classNames(styles.addonsCard, styles.addonCard)}>
-									<img
-										src='https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A219740A95611EA0840DB86284E'
-										alt='Острый халапеньо'
-										className={styles.addonCardImage}
-									/>
-									<h6 className={styles.addonCardTitle}>Сыр моцарелла</h6>
-									<p className={styles.addonCardPrice}>18 000 сум</p>
-								</div>
-
-								<div className={classNames(styles.addonsCard, styles.addonCard)}>
-									<img
-										src='https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A262427A95111E9DBAF25CA64B9'
-										alt='Острый халапеньо'
-										className={styles.addonCardImage}
-									/>
-									<h6 className={styles.addonCardTitle}>Ветчина</h6>
-									<p className={styles.addonCardPrice}>10 000 сум</p>
-								</div>
-								<div className={classNames(styles.addonsCard, styles.addonCard)}>
-									<img
-										src='https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A262427A95111E9DBAF25CA64B9'
-										alt='Острый халапеньо'
-										className={styles.addonCardImage}
-									/>
-									<h6 className={styles.addonCardTitle}>Ветчина</h6>
-									<p className={styles.addonCardPrice}>10 000 сум</p>
-								</div>
+								{[
+									{
+										img: 'https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A219740A95611E9DBAED95FEBAA',
+										title: 'Острый халапеньо',
+										price: 5000,
+									},
+									{
+										img: 'https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A219740A95611EA0840DB86284E',
+										title: 'Сыр моцарелла',
+										price: 18000,
+									},
+									{
+										img: 'https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A262427A95111E9DBAF25CA64B9',
+										title: 'Ветчина',
+										price: 10000,
+									},
+									{
+										img: 'https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A219740A95611E9DBAED95FEBAA',
+										title: 'Острый халапеньо',
+										price: 5000,
+									},
+								].map(addon => (
+									<div className={classNames(styles.addonsCard, styles.addonCard)}>
+										<img
+											src={addon.img}
+											alt={addon.title}
+											className={styles.addonCardImage}
+										/>
+										<h6 className={styles.addonCardTitle}>{addon.title}</h6>
+										<p className={styles.addonCardPrice}>{addon.price} сум</p>
+									</div>
+								))}
 							</div>
 						</div>
 					</div>

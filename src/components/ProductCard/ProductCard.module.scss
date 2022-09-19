@@ -1,4 +1,7 @@
 .card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	width: 292px;
 	cursor: pointer;
 }
@@ -23,7 +26,7 @@
 }
 
 .card_text {
-	height: 75px;
+	height: 60px;
 	font-size: 14px;
 	line-height: 20px;
 	color: #5c6370;

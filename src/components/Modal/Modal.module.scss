@@ -58,14 +58,22 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) scale(0.96);
 	position: fixed;
 	z-index: 1000;
-	visibility: hidden;
+	opacity: 0;
 	display: flex;
 	box-shadow: #00000033 0 30px 60px;
 	background-color: #fff;
 	border-radius: 20px;
+	transition: transform 150ms ease 0s, opacity 150ms ease 0s;
+	&Active {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+		& ~ .modalBg {
+			visibility: visible;
+		}
+	}
 }
 .modalClose {
 	position: absolute;
@@ -79,20 +87,16 @@
 	color: #fff;
 	background-color: transparent;
 	transition: transform 0.1s ease-in-out;
+	&:hover {
+		transform: scale(1.11);
+	}
 }
-.modalClose:hover {
-	transform: scale(1.11);
-}
-.modalActive {
-	visibility: visible;
-}
-.modalActive ~ .modalBg {
-	visibility: visible;
-}
+
 .modalMedium {
 	width: 924px;
 	height: 610px;
 }
+
 .modalBg {
 	visibility: hidden;
 	position: fixed;

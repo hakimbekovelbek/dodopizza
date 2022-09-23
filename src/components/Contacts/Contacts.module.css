@@ -1,0 +1,260 @@
+body {
+    margin: auto 0px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Dodo';
+}
+
+.container {
+    width: 1280px;
+    margin: 0px auto;
+    display: flex;
+}
+
+.main {
+    justify-content: space-between;
+}
+
+.navigation {
+    width: 950px;
+}
+
+.navigationTitle {
+    display: inline-block;
+    margin: 0px;
+    color: rgb(0, 0, 0);
+    font-size: 36px;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+}
+
+.navigationNavBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchInputIcon {
+    margin: 8px auto auto 8px;
+    position: absolute;
+}
+
+.searchInputIconPath {
+    fill: gray;
+}
+
+.input:valid {
+    background-color: rgb(255, 255, 255);
+}
+
+.input {
+    width: 400px;
+    line-height: 41px;
+    display: inline-block;
+    margin-right: 15px;
+    padding: 0px 37px !important;
+    display: block;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(92, 99, 112, 0.32);
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-family: 'Dodo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    outline: none;
+    box-shadow: none;
+    transition: border-color 0.2s ease 0s;
+}
+
+.input:focus {
+    border: 1px solid rgb(255, 105, 0);
+    background-color: rgb(255, 255, 255);
+    outline: none;
+}
+
+.navigationButtonMap {
+    background-color: rgb(255, 240, 230);
+    color: rgb(209, 87, 0);
+    padding: 8px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+    border: none;
+    border-radius: 9999px;
+    font-family: 'Dodo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    cursor: pointer;
+    transition-duration: 200ms;
+}
+
+.navigationButtonMap:hover {
+    background-color: rgb(255, 210, 179);
+    color: rgb(209, 87, 0);
+}
+
+.navigationButtonMap:active {
+    background-color: rgb(255, 240, 230);
+    color: rgb(255, 210, 179);
+}
+
+.navigationButtonIcon {
+    position: relative;
+    top: -1px;
+    left: -4px;
+    vertical-align: bottom;
+}
+
+.navigationButtonPath {
+    fill: rgb(209, 87, 0);
+}
+
+.navigationLinks {
+    display: flex;
+}
+
+.navigationLink {
+    display: flex;
+    margin-top: 10px;
+    margin-right: 15px;
+    padding: 0px;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(0, 0, 0);
+}
+
+.navigationLinkButton {
+    background: #ffffff;
+    border: 1px solid rgba(92, 99, 112, 0.32);
+    ;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.navigationLinkTitle {
+    margin-left: 8px;
+    user-select: none;
+    display: inline-block;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(0, 0, 0);
+}
+
+.information {
+    padding: 16px;
+    background-color: rgb(243, 243, 247);
+    border-radius: 8px;
+    width: 290.9px;
+}
+
+.informationPhoneNumber {
+    margin-bottom: 20px;
+}
+
+.informationTitle {
+    font-size: 14px;
+    line-height: 17px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: rgb(115, 121, 140);
+    font-weight: 400;
+}
+
+.informationText {
+    font-size: 15px;
+    line-height: 19px;
+    color: rgb(0, 0, 0);
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.informationText:hover {
+    color: rgb(255, 105, 0);
+    text-decoration: none;
+}
+
+.menu {
+    padding-top: 35px;
+}
+
+.menuStar {
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+.menuStar_icon {
+    fill: orange;
+}
+
+.menuSection {
+    width: 290.906px;
+    border-spacing: 38.7813px 0px;
+    margin-right: 30px;
+}
+
+.menuSectionTitle {
+    font-size: 20px;
+    line-height: 24px;
+    width: 155px;
+    color: rgb(0, 0, 0);
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menuSectionTitle:hover {
+    color: rgb(255, 105, 0);
+}
+
+.menuSectionDescripton {
+    display: flex;
+    margin-top: 1px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    z-index: 2;
+}
+
+.menuBlackPoint {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    margin: 3px 6px;
+    border-radius: 9999px;
+    background-color: black;
+}
+
+.menuSectionItems {
+    display: block;
+    color: rgb(0, 0, 0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 15px;
+    line-height: 21px;
+    margin-top: 15px;
+    margin-bottom: 11px;
+    position: relative;
+}
+
+.menuItemMetro {
+    position: absolute;
+    left: -25px;
+    top: 2px;
+}
+
+.menuWorkTime {
+    margin-top: 5px;
+}

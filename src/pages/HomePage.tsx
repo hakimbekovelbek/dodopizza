@@ -1,5 +1,4 @@
 import {
-	Banner,
 	NavigationBar,
 	Container,
 	ProductCard,
@@ -7,6 +6,7 @@ import {
 	ProductsWrapper,
 	Modal,
 	AuthModal,
+	Top,
 } from 'components'
 import React, { useState } from 'react'
 
@@ -19,7 +19,7 @@ export const HomePage: React.FC = () => {
 	return (
 		<>
 			<Container>
-				<Banner setIsAuthModalOpen={setIsAuthModalOpen} />
+				<Top setIsAuthModalOpen={setIsAuthModalOpen}/>
 				<NavigationBar />
 				<Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
 				<AuthModal

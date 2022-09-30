@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export interface IBannerProps {
 	setIsAuthModalOpen: Function
 }
@@ -6,6 +8,9 @@ export const Banner: React.FC<IBannerProps> = ({
 	setIsAuthModalOpen,
 }: IBannerProps) => {
 	const modalOpenHandler = (): void => {
+		axios.post('http://localhost:8081/', {
+			msg: 'Hello from React',
+		})
 		setIsAuthModalOpen(true)
 	}
 	return (

@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import { useState, useEffect, useRef } from 'react'
+import PhoneInput from 'react-phone-input-2'
 // @ts-ignore
 import styles from './AuthModal.module.scss'
 
@@ -12,11 +13,10 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 	isAuthModalOpen,
 	setIsAuthModalOpen,
 }: IAuthModalProps) => {
-	const telInputRef = useRef<HTMLInputElement>(null)
 	const modalBgRef = useRef<HTMLDivElement>(null)
 	const submitBtnRef = useRef<HTMLInputElement>(null)
 
-	const [telArray, setTelArray] = useState<Array<string>>(['+998-'])
+	const [tel, setTel] = useState<string>('998')
 
 	const modalCloseHandler = (): void => {
 		setIsAuthModalOpen(false)
@@ -33,58 +33,6 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 			document.body.style.overflow = ''
 		}
 	})
-
-	const phoneNumberInputHandler = (event: KeyboardEvent) => {
-		if (telInputRef.current) {
-			const updatedTelArray = [...telArray]
-			if (event.key === 'Backspace' && telArray.length > 1) {
-				updatedTelArray.pop()
-				setTelArray(updatedTelArray)
-				return
-			}
-
-			if (event.key === 'Backspace' && telArray.length === 1) {
-				event.preventDefault()
-				return
-			}
-
-			if (updatedTelArray.length === 11) {
-				event.preventDefault()
-				return
-			}
-
-			if (/\d/.test(event.key)) {
-				if (
-					updatedTelArray.length === 2 ||
-					updatedTelArray.length === 5 ||
-					updatedTelArray.length === 7
-				) {
-					updatedTelArray.push(event.key.concat('-'))
-					setTelArray(updatedTelArray)
-					telInputRef.current.value = telArray.join('')
-				} else {
-					updatedTelArray.push(event.key)
-					setTelArray(updatedTelArray)
-					telInputRef.current.value = telArray.join('')
-				}
-			}
-
-			if (/\D/.test(event.key)) {
-				if (event.key !== 'Backspace') {
-					event.preventDefault()
-				}
-			}
-
-			if (telInputRef.current?.value.length === 17) {
-				if (submitBtnRef.current) {
-					submitBtnRef.current.disabled = false
-				}
-			} else {
-				// @ts-ignore
-				submitBtnRef.current.disabled = true
-			}
-		}
-	}
 
 	return (
 		<>
@@ -107,28 +55,18 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 				</p>
 				<form action='#' className={styles.modalForm}>
 					<div className={styles.modalFormContainer}>
-						<div className={styles.countrySelectButtonContainer}>
-							<label>
-								<span className={styles.labelText}>Страна</span>
-								<button type='button' className={styles.countrySelectButton}>
-									Uzb
-								</button>
-							</label>
-						</div>
 						<div className={styles.telInputContainer}>
 							<label>
 								<span className={styles.labelText}>Номер телефона</span>
-								<input
-									type='tel'
-									onKeyDown={e => {
-										// @ts-ignore
-										phoneNumberInputHandler(e)
+								<PhoneInput
+									country='uz'
+									disableSearchIcon
+									disableDropdown
+									placeholder='+998 99-888-77-66'
+									masks={{ uz: '..-...-..-..' }}
+									onChange={val => {
+										setTel(val)
 									}}
-									placeholder='+998 99-999-99-99'
-									maxLength={13}
-									minLength={13}
-									className={styles.telInput}
-									ref={telInputRef}
 								/>
 							</label>
 						</div>

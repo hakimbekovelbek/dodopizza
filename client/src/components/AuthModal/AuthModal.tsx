@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import { useState, useEffect, useRef } from 'react'
 import PhoneInput from 'react-phone-input-2'
+import { CODE_PREFIXES } from '../../constants'
 // @ts-ignore
 import styles from './AuthModal.module.scss'
 
@@ -17,6 +18,8 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 	const submitBtnRef = useRef<HTMLInputElement>(null)
 
 	const [tel, setTel] = useState<string>('998')
+	const [isTelValid, setIsTelValid] = useState<boolean>(false)
+	const [authModalState, setAuthModalState] = useState<string>('initial')
 
 	const modalCloseHandler = (): void => {
 		setIsAuthModalOpen(false)
@@ -31,6 +34,14 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 			document.body.style.overflow = 'hidden'
 		} else {
 			document.body.style.overflow = ''
+		}
+
+		if (submitBtnRef.current) {
+			if (isTelValid) {
+				submitBtnRef.current.disabled = false
+			} else {
+				submitBtnRef.current.disabled = true
+			}
 		}
 	})
 
@@ -49,36 +60,52 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 					<img src='modal_close.svg' alt='Close button' />
 				</button>
 				<h2 className={styles.modalTitle}>Вход на сайт</h2>
-				<p className={styles.modalDescription}>
-					Подарим подарок на день рождения, сохраним адрес доставки и расскажем об
-					акциях
-				</p>
-				<form action='#' className={styles.modalForm}>
-					<div className={styles.modalFormContainer}>
-						<div className={styles.telInputContainer}>
-							<label>
-								<span className={styles.labelText}>Номер телефона</span>
-								<PhoneInput
-									country='uz'
-									disableSearchIcon
-									disableDropdown
-									placeholder='+998 99-888-77-66'
-									masks={{ uz: '..-...-..-..' }}
-									onChange={val => {
-										setTel(val)
-									}}
-								/>
-							</label>
-						</div>
-					</div>
-					<input
-						type='submit'
-						value='Выслать код'
-						className={styles.submitButton}
-						ref={submitBtnRef}
-						disabled
-					/>
-				</form>
+				{authModalState === 'initial' ? (
+					<>
+						<p className={styles.modalDescription}>
+							Подарим подарок на день рождения, сохраним адрес доставки и расскажем об
+							акциях
+						</p>
+						<form action='#' className={styles.modalForm}>
+							<div className={styles.modalFormContainer}>
+								<div className={styles.telInputContainer}>
+									<label>
+										<span className={styles.labelText}>Номер телефона</span>
+										<PhoneInput
+											country='uz'
+											disableSearchIcon
+											disableDropdown
+											placeholder='+998 99-999-99-99'
+											masks={{ uz: '..-...-..-..' }}
+											onChange={val => {
+												setTel(val)
+											}}
+											isValid={(telephone): boolean => {
+												setIsTelValid(
+													telephone.startsWith('998') &&
+														CODE_PREFIXES.includes(telephone.slice(3, 5)) &&
+														telephone.length === 12
+												)
+												return isTelValid
+											}}
+										/>
+									</label>
+								</div>
+							</div>
+							<input
+								type='submit'
+								value='Выслать код'
+								className={styles.submitButton}
+								ref={submitBtnRef}
+								onClick={() => {
+									setAuthModalState('confirmation')
+								}}
+							/>
+						</form>
+					</>
+				) : (
+					'Hello'
+				)}
 			</div>
 			<div
 				className={styles.modalBg}

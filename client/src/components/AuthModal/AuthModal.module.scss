@@ -141,6 +141,14 @@
 	font-family: inherit;
 	border-radius: 9999px;
 	border: 0;
+	background-color: #ff6900;
+	color: #ffffff;
+	transition: background 200ms ease-out, color 200ms ease-out;
+
+	&:hover {
+		background-color: #e86100;
+	}
+
 	&:disabled {
 		color: rgb(171, 173, 186);
 		background-color: rgb(226, 226, 233);

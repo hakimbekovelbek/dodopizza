@@ -1,0 +1,21 @@
+{
+  "name": "dodopizzaru",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "(cd server && npm start) & (cd client && npm start)",
+    "install:all": "(cd server && npm install) & (cd client && npm install)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakimbekovelbek/dodopizza.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hakimbekovelbek/dodopizza/issues"
+  },
+  "homepage": "https://github.com/hakimbekovelbek/dodopizza#readme"
+}

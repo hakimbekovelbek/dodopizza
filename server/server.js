@@ -6,11 +6,15 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
+require("dotenv").config();
+
+const PORT = process.env.PORT || 8081;
+
 server.use((req, res) => {
   console.log(req.body.msg);
-  res.status(200).send("<h1>Hello from Express</h1>");
+  res.status(200).send("<h1>Hello from Expresss</h1>");
 });
 
-server.listen(8081, () => {
-  console.log("Server is running...");
+server.listen(PORT, () => {
+  console.log("Server is running on port " + PORT);
 });

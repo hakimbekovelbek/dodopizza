@@ -155,3 +155,24 @@
 		cursor: not-allowed;
 	}
 }
+
+.phoneNumber {
+	margin-right: 0.5rem;
+	font-weight: 600;
+	color: #000;
+}
+
+.modalText {
+	display: flex;
+	flex-direction: column;
+	color: #5c6370;
+	line-height: 20px;
+}
+
+.textButton {
+	cursor: pointer;
+	color: #ff6900;
+	&:hover {
+		color: #d15700;
+	}
+}

@@ -23,6 +23,7 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 
 	const modalCloseHandler = (): void => {
 		setIsAuthModalOpen(false)
+		setAuthModalState('initial')
 	}
 
 	useEffect(() => {
@@ -44,6 +45,15 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 			}
 		}
 	})
+
+	const formatTelNumber = (telephone: string): string => {
+		const phone = telephone.split('')
+		phone.splice(2 + 1, 0, ' ')
+		phone.splice(5 + 1, 0, ' ')
+		phone.splice(9 + 1, 0, ' ')
+		phone.splice(12 + 1, 0, ' ')
+		return `+${phone.join('')}`
+	}
 
 	return (
 		<>
@@ -77,6 +87,7 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 											disableDropdown
 											placeholder='+998 99-999-99-99'
 											masks={{ uz: '..-...-..-..' }}
+											value={tel}
 											onChange={val => {
 												setTel(val)
 											}}
@@ -104,7 +115,22 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 						</form>
 					</>
 				) : (
-					'Hello'
+					<>
+						<div className={styles.modalText}>
+							Код отправили сообщением на
+							<div>
+								<span className={styles.phoneNumber}>{formatTelNumber(tel)}</span>
+								<span
+									onClick={() => {
+										setAuthModalState('initial')
+									}}
+									className={styles.textButton}
+								>
+									Изменить
+								</span>
+							</div>
+						</div>
+					</>
 				)}
 			</div>
 			<div

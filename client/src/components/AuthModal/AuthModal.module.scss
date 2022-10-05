@@ -167,6 +167,7 @@
 	flex-direction: column;
 	color: #5c6370;
 	line-height: 20px;
+	margin-bottom: 48px;
 }
 
 .textButton {
@@ -174,5 +175,32 @@
 	color: #ff6900;
 	&:hover {
 		color: #d15700;
+	}
+}
+
+.OTPCodeInputsContainer {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-grow: 1;
+}
+
+.OTPCodeInput {
+	width: 52px;
+	height: 60px;
+	background-color: rgb(255, 255, 255);
+	outline: none;
+	border: 1px solid rgb(211, 213, 222);
+	border-radius: 12px;
+	color: rgb(0, 0, 0);
+	font-size: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-family: Dodo;
+	font-weight: 600;
+	padding: 0px;
+	margin-right: 12px;
+	&:focus {
+		border-color: rgb(255, 105, 0);
 	}
 }

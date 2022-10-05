@@ -46,6 +46,17 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 		}
 	})
 
+	useEffect(() => {
+		const telInput = document.querySelector(
+			'.react-tel-input input[type="tel"]'
+		) as HTMLInputElement
+
+		if (telInput) {
+			telInput.tabIndex = isAuthModalOpen ? 1 : -1
+			telInput.focus()
+		}
+	}, [authModalState, isAuthModalOpen])
+
 	const formatTelNumber = (telephone: string): string => {
 		const phone = telephone.split('')
 		phone.splice(2 + 1, 0, ' ')
@@ -66,6 +77,7 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 					className={styles.modalClose}
 					type='button'
 					onClick={modalCloseHandler}
+					tabIndex={-1}
 				>
 					<img src='modal_close.svg' alt='Close button' />
 				</button>
@@ -97,7 +109,7 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 														CODE_PREFIXES.includes(telephone.slice(3, 5)) &&
 														telephone.length === 12
 												)
-												return isTelValid
+												return true
 											}}
 										/>
 									</label>
@@ -130,6 +142,25 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 								</span>
 							</div>
 						</div>
+						<div className={styles.OTPCodeInputsContainer}>
+							{[1, 2, 3, 4].map(id => (
+								<input
+									type='tel'
+									maxLength={1}
+									minLength={1}
+									className={styles.OTPCodeInput}
+								/>
+							))}
+						</div>
+						<input
+							type='submit'
+							value='Получить новый код'
+							className={styles.submitButton}
+							ref={submitBtnRef}
+							onClick={() => {
+								setAuthModalState('confirmation')
+							}}
+						/>
 					</>
 				)}
 			</div>

@@ -42,6 +42,7 @@ export const Modal: React.FC<IModalProps> = ({
 					onClick={() => {
 						setIsModalOpen(false)
 					}}
+					tabIndex={-1}
 				>
 					<img src='modal_close.svg' alt='Close button' />
 				</button>
@@ -218,7 +219,7 @@ export const Modal: React.FC<IModalProps> = ({
 						</div>
 					</div>
 
-					<button className={styles.modalCardBtn} type='button'>
+					<button className={styles.modalCardBtn} type='button' tabIndex={-1}>
 						Добавить в корзину за 85 000 сум
 					</button>
 				</div>

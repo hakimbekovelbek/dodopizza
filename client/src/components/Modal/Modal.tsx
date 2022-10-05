@@ -141,6 +141,7 @@ export const Modal: React.FC<IModalProps> = ({
 										className={styles.sliderBtnItem}
 										data-offset={index}
 										onClick={() => {}}
+										key={Math.random()}
 									>
 										<label>
 											<span>{text}</span>
@@ -164,6 +165,7 @@ export const Modal: React.FC<IModalProps> = ({
 									<div
 										className={styles.sliderBtnItem}
 										data-offset={index}
+										key={Math.random()}
 										onClick={e => {
 											if (e.currentTarget.dataset.offset && smallSliderRef.current) {
 												smallSliderRef.current.style.transform = `translate(calc(100% * ${+e
@@ -205,7 +207,10 @@ export const Modal: React.FC<IModalProps> = ({
 										price: 5000,
 									},
 								].map(addon => (
-									<div className={classNames(styles.addonsCard, styles.addonCard)}>
+									<div
+										className={classNames(styles.addonsCard, styles.addonCard)}
+										key={Math.random()}
+									>
 										<img
 											src={addon.img}
 											alt={addon.title}

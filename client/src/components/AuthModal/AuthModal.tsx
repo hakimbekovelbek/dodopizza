@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, ChangeEvent } from 'react'
 import PhoneInput from 'react-phone-input-2'
 import { CODE_PREFIXES } from '../../constants'
 // @ts-ignore
@@ -44,6 +44,12 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 				submitBtnRef.current.disabled = true
 			}
 		}
+
+		setIsTelValid(
+			tel.startsWith('998') &&
+				CODE_PREFIXES.includes(tel.slice(3, 5)) &&
+				tel.length === 12
+		)
 	})
 
 	useEffect(() => {
@@ -57,6 +63,18 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 		}
 	}, [authModalState, isAuthModalOpen])
 
+	useEffect(() => {
+		if (authModalState === 'confirmation') {
+			const firstOTPInput = document.querySelector(
+				'#OTPCodeInputsContainer input[type="tel"]'
+			) as HTMLInputElement
+
+			if (firstOTPInput) {
+				firstOTPInput.focus()
+			}
+		}
+	}, [authModalState])
+
 	const formatTelNumber = (telephone: string): string => {
 		const phone = telephone.split('')
 		phone.splice(2 + 1, 0, ' ')
@@ -64,6 +82,20 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 		phone.splice(9 + 1, 0, ' ')
 		phone.splice(12 + 1, 0, ' ')
 		return `+${phone.join('')}`
+	}
+
+	const OTPCodeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
+		if (/\D/.test(e.target.value)) {
+			e.target.value = ''
+			return
+		}
+
+		if (e.target.value === '') return
+
+		const nextInput = e.target.nextElementSibling as HTMLInputElement
+		if (nextInput) {
+			nextInput.focus()
+		}
 	}
 
 	return (
@@ -103,14 +135,6 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 											onChange={val => {
 												setTel(val)
 											}}
-											isValid={(telephone): boolean => {
-												setIsTelValid(
-													telephone.startsWith('998') &&
-														CODE_PREFIXES.includes(telephone.slice(3, 5)) &&
-														telephone.length === 12
-												)
-												return true
-											}}
 										/>
 									</label>
 								</div>
@@ -142,13 +166,18 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 								</span>
 							</div>
 						</div>
-						<div className={styles.OTPCodeInputsContainer}>
-							{[1, 2, 3, 4].map(id => (
+						<div
+							className={styles.OTPCodeInputsContainer}
+							id='OTPCodeInputsContainer'
+						>
+							{[1, 2, 3, 4].map(() => (
 								<input
 									type='tel'
 									maxLength={1}
 									minLength={1}
+									key={Math.random()}
 									className={styles.OTPCodeInput}
+									onChange={OTPCodeInputHandler}
 								/>
 							))}
 						</div>

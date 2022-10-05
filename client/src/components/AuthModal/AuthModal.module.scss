@@ -141,9 +141,38 @@
 	font-family: inherit;
 	border-radius: 9999px;
 	border: 0;
+	background-color: #ff6900;
+	color: #ffffff;
+	transition: background 200ms ease-out, color 200ms ease-out;
+
+	&:hover {
+		background-color: #e86100;
+	}
+
 	&:disabled {
 		color: rgb(171, 173, 186);
 		background-color: rgb(226, 226, 233);
 		cursor: not-allowed;
+	}
+}
+
+.phoneNumber {
+	margin-right: 0.5rem;
+	font-weight: 600;
+	color: #000;
+}
+
+.modalText {
+	display: flex;
+	flex-direction: column;
+	color: #5c6370;
+	line-height: 20px;
+}
+
+.textButton {
+	cursor: pointer;
+	color: #ff6900;
+	&:hover {
+		color: #d15700;
 	}
 }

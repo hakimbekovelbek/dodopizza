@@ -1,5 +1,14 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-nested-ternary */
 import classNames from 'classnames'
-import { useState, useEffect, useRef, ChangeEvent } from 'react'
+import {
+	useState,
+	useEffect,
+	useRef,
+	ChangeEvent,
+	KeyboardEvent,
+	MouseEvent,
+} from 'react'
 import PhoneInput from 'react-phone-input-2'
 import { CODE_PREFIXES } from '../../constants'
 // @ts-ignore
@@ -84,7 +93,7 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 		return `+${phone.join('')}`
 	}
 
-	const OTPCodeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
+	const OTPCodeInputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		if (/\D/.test(e.target.value)) {
 			e.target.value = ''
 			return
@@ -95,6 +104,80 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 		const nextInput = e.target.nextElementSibling as HTMLInputElement
 		if (nextInput) {
 			nextInput.focus()
+		}
+	}
+
+	const getInput = (
+		e: KeyboardEvent<HTMLInputElement>,
+		pos: string
+	): HTMLInputElement | null => {
+		return pos === 'prev'
+			? (e.currentTarget.previousElementSibling as HTMLInputElement)
+			: pos === 'next'
+			? (e.currentTarget.nextElementSibling as HTMLInputElement)
+			: null
+	}
+
+	const OTPCodeKeyboardPressHanlder = (e: KeyboardEvent<HTMLInputElement>) => {
+		// if (e.currentTarget.value.length === 1) {
+		// 	setTimeout(() => {
+		// 		e.currentTarget.style.caretColor = 'transparent'
+		// 	}, 0)
+		// }
+		// ! ->
+		if (e.key === 'ArrowRight') {
+			const input = getInput(e, 'next')
+			input && input.focus()
+			// setTimeout(() => {
+			// 	if (e.currentTarget.value.length === 1) {
+			// 		e.currentTarget.style.caretColor = 'transparent'
+			// 	}
+			// }, 0)
+		}
+		// ? <-
+		if (e.key === 'ArrowLeft') {
+			const input = getInput(e, 'prev')
+			input && input.focus()
+			// setTimeout(() => {
+			// 	if (e.currentTarget.value.length === 1) {
+			// 		e.currentTarget.style.caretColor = 'transparent'
+			// 	}
+			// }, 0)
+		}
+
+		if (e.key === 'Backspace') {
+			e.preventDefault()
+
+			if (e.currentTarget.value.length === 1) {
+				e.currentTarget.value = ''
+			} else {
+				const input = getInput(e, 'prev')
+				if (input) {
+					input.focus()
+					input.value = ''
+				}
+			}
+			e.currentTarget.style.caretColor = ''
+		}
+
+		if (
+			/\d/.test(e.key) &&
+			e.key.toLowerCase() !== 'e' &&
+			e.currentTarget.value.length === 1
+		) {
+			e.currentTarget.value = e.key
+			const input = getInput(e, 'next')
+			input && input.focus()
+		}
+	}
+
+	const OTPCodeClickHanlder = (e: MouseEvent<HTMLInputElement>) => {
+		if (e.button === 1 && e.currentTarget.value.length) {
+			e.currentTarget.style.caretColor = 'transparent'
+		}
+
+		if (e.button === 3 && e.currentTarget.value.length) {
+			e.currentTarget.style.caretColor = ''
 		}
 	}
 
@@ -177,7 +260,9 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 									minLength={1}
 									key={Math.random()}
 									className={styles.OTPCodeInput}
-									onChange={OTPCodeInputHandler}
+									onChange={OTPCodeInputChangeHandler}
+									onKeyDown={OTPCodeKeyboardPressHanlder}
+									onClick={OTPCodeClickHanlder}
 								/>
 							))}
 						</div>

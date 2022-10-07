@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, MouseEvent, RefObject } from 'react'
 // @ts-ignore
 import styles from './Modal.module.scss'
 
@@ -12,6 +12,7 @@ export const Modal: React.FC<IModalProps> = ({
 	setIsModalOpen,
 }: IModalProps) => {
 	const smallSliderRef = useRef<HTMLDivElement>(null)
+	const largeSliderRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
 		window.addEventListener('keydown', e => {
@@ -28,6 +29,19 @@ export const Modal: React.FC<IModalProps> = ({
 			document.body.style.marginRight = ''
 		}
 	})
+
+	const sliderSwitchHandler = (
+		e: MouseEvent<HTMLDivElement>,
+		ref: RefObject<HTMLDivElement>
+	) => {
+		if (e.currentTarget.dataset.offset && ref && ref.current) {
+			const elem = ref.current
+			if (elem) {
+				elem.style.transform = `translate(calc(100% * ${+e.currentTarget.dataset
+					.offset}))`
+			}
+		}
+	}
 
 	return (
 		<>
@@ -134,13 +148,16 @@ export const Modal: React.FC<IModalProps> = ({
 									styles.sliderBtnSliderSmall
 								)}
 								style={{ transform: 'translateX(100%)' }}
+								ref={largeSliderRef}
 							/>
 							{['Маленькая', 'Средняя', 'Большая'].map((text, index) => {
 								return (
 									<div
 										className={styles.sliderBtnItem}
 										data-offset={index}
-										onClick={() => {}}
+										onClick={e => {
+											sliderSwitchHandler(e, largeSliderRef)
+										}}
 										key={Math.random()}
 									>
 										<label>
@@ -167,10 +184,7 @@ export const Modal: React.FC<IModalProps> = ({
 										data-offset={index}
 										key={Math.random()}
 										onClick={e => {
-											if (e.currentTarget.dataset.offset && smallSliderRef.current) {
-												smallSliderRef.current.style.transform = `translate(calc(100% * ${+e
-													.currentTarget.dataset.offset}))`
-											}
+											sliderSwitchHandler(e, smallSliderRef)
 										}}
 									>
 										<label>

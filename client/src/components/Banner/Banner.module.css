@@ -1,140 +1,133 @@
 .headerNavInfoRating .top,
 .headerNavInfoContacts .top {
-    font-size: 18px;
-    line-height: 1.2;
-    font-weight: 500;
+	font-size: 18px;
+	line-height: 1.2;
+	font-weight: 500;
 }
 
 .headerNavInfoRating .bottom {
-    width: 100px;
+	width: 100px;
 }
 
 .headerNavInfoRating .bottom,
 .headerNavInfoContacts .bottom {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1px;
-    font-size: 15px;
-    line-height: 1.4;
-    font-weight: 500;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1px;
+	font-size: 15px;
+	line-height: 1.4;
+	font-weight: 500;
 }
 
 .headerHeading {
-    display: none;
+	display: none;
 }
 
 .logo {
-    width: 250px;
+	width: 250px;
 }
 
 .rating {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .textOrange {
-    color: #ff6900;
+	color: #ff6900;
 }
 
 .bottomTextGray {
-    color: #999;
+	color: #999;
 }
 
 .textOrange:hover {
-    color: #e86100;
-    cursor: pointer;
+	color: #e86100;
+	cursor: pointer;
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .telNumber {
-    color: #000;
+	color: #000;
 }
 
 .headerNavInfo {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 24px;
-    padding-bottom: 16px;
-
+	display: flex;
+	justify-content: space-between;
+	padding-top: 24px;
+	padding-bottom: 16px;
 }
 
 .headerNavInfo .left {
-    display: flex;
-    justify-content: space-between;
-    width: 711.6px;
+	display: flex;
+	justify-content: space-between;
+	width: 711.6px;
 }
 
 .headerNavInfo .left .headerNavInfoContacts {
-    margin-right: 40px;
+	margin-right: 40px;
 }
 
 .loginBtn {
-    line-height: 16px;
-    padding: 8px 16px;
-    border: 0;
-    font-family: inherit;
-    font-size: 14px;
-    border-radius: 9999px;
+	line-height: 16px;
+	padding: 8px 16px;
+	border: 0;
+	font-family: inherit;
+	font-size: 14px;
+	border-radius: 9999px;
+	cursor: pointer;
+	color: #5c6370;
+	transition: color 200ms ease-out;
+}
+
+.loginBtn:hover {
+	color: #000;
 }
 
 .right {
-    display: flex;
-    column-gap: 32px;
-    -webkit-box-align: center;
-    align-items: center;
+	display: flex;
+	column-gap: 32px;
+	-webkit-box-align: center;
+	align-items: center;
 }
 
 .dodoCoins {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    -webkit-box-align: center;
-    align-items: center;
-
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	-webkit-box-align: center;
+	align-items: center;
 }
 
 .dodoCoins.icon {
-    width: 28px;
-    height: 28px;
-    transition: transform 150ms ease 0s
+	width: 28px;
+	height: 28px;
+	transition: transform 150ms ease 0s;
 }
 
 .label {
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 18px;
-    white-space: nowrap;
-    transition: color 150ms ease 0s;
-    margin: 0px;
+	color: rgb(0, 0, 0);
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 18px;
+	white-space: nowrap;
+	transition: color 150ms ease 0s;
+	margin: 0px;
 }
 
 /* .dodoCoins:hover{
   color: orange;
 } */
 .icon.img:hover {
-    fill: orange;
-    transition: transform 150ms ease 0s;
+	fill: orange;
+	transition: transform 150ms ease 0s;
 }
 
 .label:hover {
-    color: orange;
+	color: orange;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* .dodoCoins.icon{
   top: 5px;

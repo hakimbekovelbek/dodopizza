@@ -31,7 +31,12 @@
 .menu_list_item_link {
 	color: #000;
 	line-height: 1;
-	transition: color 250ms;
+	transition: color 250ms ease-out;
+}
+
+.menu_list_item_link:focus {
+	color: #ff6900;
+	outline: none;
 }
 
 .menu_list_item_link:hover {
@@ -59,6 +64,7 @@
 	background-color: rgb(255, 105, 0);
 	color: rgb(255, 255, 255);
 	transition: 200ms;
+	cursor: pointer;
 }
 
 .menuBtn:hover {

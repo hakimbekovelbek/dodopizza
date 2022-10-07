@@ -95,54 +95,42 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 
 	const OTPCodeInputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
 		if (/\D/.test(e.target.value)) {
-			e.target.value = ''
+			e.currentTarget.value = ''
 			return
 		}
 
 		if (e.target.value === '') return
 
 		const nextInput = e.target.nextElementSibling as HTMLInputElement
-		if (nextInput) {
-			nextInput.focus()
-		}
+		nextInput && nextInput.focus()
 	}
 
-	const getInput = (
+	const switchInput = (
 		e: KeyboardEvent<HTMLInputElement>,
 		pos: string
-	): HTMLInputElement | null => {
-		return pos === 'prev'
-			? (e.currentTarget.previousElementSibling as HTMLInputElement)
-			: pos === 'next'
-			? (e.currentTarget.nextElementSibling as HTMLInputElement)
-			: null
+	): void => {
+		const input =
+			pos === 'prev'
+				? (e.currentTarget.previousElementSibling as HTMLInputElement)
+				: pos === 'next'
+				? (e.currentTarget.nextElementSibling as HTMLInputElement)
+				: null
+		input && input.focus()
+		if (e.currentTarget !== document.activeElement) {
+			e.currentTarget.style.caretColor = ''
+		}
+		if (input && input.value.length === 1) {
+			input.style.caretColor = 'transparent'
+		}
 	}
 
 	const OTPCodeKeyboardPressHanlder = (e: KeyboardEvent<HTMLInputElement>) => {
-		// if (e.currentTarget.value.length === 1) {
-		// 	setTimeout(() => {
-		// 		e.currentTarget.style.caretColor = 'transparent'
-		// 	}, 0)
-		// }
-		// ! ->
 		if (e.key === 'ArrowRight') {
-			const input = getInput(e, 'next')
-			input && input.focus()
-			// setTimeout(() => {
-			// 	if (e.currentTarget.value.length === 1) {
-			// 		e.currentTarget.style.caretColor = 'transparent'
-			// 	}
-			// }, 0)
+			switchInput(e, 'next')
 		}
-		// ? <-
+
 		if (e.key === 'ArrowLeft') {
-			const input = getInput(e, 'prev')
-			input && input.focus()
-			// setTimeout(() => {
-			// 	if (e.currentTarget.value.length === 1) {
-			// 		e.currentTarget.style.caretColor = 'transparent'
-			// 	}
-			// }, 0)
+			switchInput(e, 'prev')
 		}
 
 		if (e.key === 'Backspace') {
@@ -151,7 +139,7 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 			if (e.currentTarget.value.length === 1) {
 				e.currentTarget.value = ''
 			} else {
-				const input = getInput(e, 'prev')
+				const input = e.currentTarget.previousElementSibling as HTMLInputElement
 				if (input) {
 					input.focus()
 					input.value = ''
@@ -166,19 +154,19 @@ export const AuthModal: React.FC<IAuthModalProps> = ({
 			e.currentTarget.value.length === 1
 		) {
 			e.currentTarget.value = e.key
-			const input = getInput(e, 'next')
-			input && input.focus()
+			const input = e.currentTarget.nextElementSibling as HTMLInputElement
+			setTimeout(() => {
+				input && input.focus()
+			}, 0)
 		}
 	}
 
 	const OTPCodeClickHanlder = (e: MouseEvent<HTMLInputElement>) => {
-		if (e.button === 1 && e.currentTarget.value.length) {
-			e.currentTarget.style.caretColor = 'transparent'
-		}
-
-		if (e.button === 3 && e.currentTarget.value.length) {
-			e.currentTarget.style.caretColor = ''
-		}
+		// if (e.detail === 1 && e.currentTarget.value.length) {
+		// 	e.currentTarget.style.caretColor = 'transparent'
+		// } else {
+		// 	e.currentTarget.style.caretColor = 'black'
+		// }
 	}
 
 	return (

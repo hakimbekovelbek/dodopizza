@@ -23,12 +23,16 @@ export const Modal: React.FC<IModalProps> = ({
 
 		if (isModalOpen) {
 			document.body.style.overflow = 'hidden'
-			document.body.style.marginRight = '15px'
+			// document.body.style.marginRight = '15px'
 		} else {
 			document.body.style.overflow = ''
-			document.body.style.marginRight = ''
+			// document.body.style.marginRight = ''
 		}
 	})
+
+	const modalCloseHandler = (): void => {
+		setIsModalOpen(false)
+	}
 
 	const sliderSwitchHandler = (
 		e: MouseEvent<HTMLDivElement>,
@@ -243,7 +247,8 @@ export const Modal: React.FC<IModalProps> = ({
 					</button>
 				</div>
 			</div>
-			<div className={styles.modalBg} />
+
+			<div className={styles.modalBg} onClick={modalCloseHandler} />
 		</>
 	)
 }

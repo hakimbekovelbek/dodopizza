@@ -1,3 +1,7 @@
+export type Id={
+    id:string|number
+}
+
 export interface Addons {
     id?: any
     title: string
@@ -89,10 +93,23 @@ export interface ComboProductTypes extends ComboProducts{
     realPrice:number
 }
 
+// export const ty=(type:string, products:Array<any>)=>{
+//     switch (type){
+//         case 'combo':
+//             return ;
+//         case 'pizza':
+//             return Array<Product|ComboProducts>;
+//         default:
+//             return Array<Product>
+//     }
+// }
+
 export interface ProductType {
     id: any
     title: string
     type: string
-    products: Array<Product|ComboProducts>
+    products: Array<Product|ComboProducts|ComboProductTypes>
 }
+
+
 

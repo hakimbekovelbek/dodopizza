@@ -1,5 +1,4 @@
-import { ProductType } from './dataBase/interfces'
-import {COMBOS, DESSERTS, DRINKS, PIZZAS, PIZZAS_COMBO, SNAKS} from './dataBase';
+import {ProductType, COMBOS, DESSERTS, DRINKS, PIZZAS, PIZZAS_COMBO, SNAKS} from './dataBase';
 
 export const NAVBAR_CONFIG = [
 	{
@@ -43,6 +42,8 @@ export const NAVBAR_CONFIG = [
 		link: 'live',
 	},
 ]
+
+
 
 export const PRODUCTS_DATA: Array<ProductType> = [
 	{

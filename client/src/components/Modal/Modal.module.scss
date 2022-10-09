@@ -60,7 +60,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%) scale(0.96);
 	position: fixed;
-	z-index: 1000;
+	z-index: -1000;
 	opacity: 0;
 	display: flex;
 	box-shadow: #00000033 0 30px 60px;
@@ -68,6 +68,7 @@
 	border-radius: 20px;
 	transition: transform 150ms ease 0s, opacity 150ms ease 0s;
 	&Active {
+		z-index: 1000;
 		opacity: 1;
 		transform: translate(-50%, -50%) scale(1);
 		& ~ .modalBg {

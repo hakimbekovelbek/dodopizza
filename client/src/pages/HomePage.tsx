@@ -10,7 +10,12 @@ import {
 } from 'components'
 import React, { useState } from 'react'
 
-import { PIZZAS } from 'constants/dataBase/products/pizzas'
+import { PRODUCTS_DATA } from 'constants/index'
+// import { ProductType } from 'constants/dataBase/interfces'
+//
+// export interface ProductDataInter{
+// 	productData:Array<ProductType>;
+// }
 
 export const HomePage: React.FC = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false)
@@ -21,20 +26,36 @@ export const HomePage: React.FC = () => {
 			<Container>
 				<Banner setIsAuthModalOpen={setIsAuthModalOpen} />
 				<NavigationBar />
-				<Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+				<Modal
+					isModalOpen={isModalOpen}
+					setIsModalOpen={setIsModalOpen}
+				/>
 				<AuthModal
 					isAuthModalOpen={isAuthModalOpen}
 					setIsAuthModalOpen={setIsAuthModalOpen}
 				/>
-				<ProductsWrapper>
-					{PIZZAS.map(product => (
-						<ProductCard
-							product={product}
-							key={product.id}
-							setIsModalOpen={setIsModalOpen}
-						/>
-					))}
-				</ProductsWrapper>
+				{PRODUCTS_DATA.map(productsType => {
+					// console.log(product)
+					return (
+						<ProductsWrapper
+							key={`${productsType.type}:${productsType.id}`}
+							title={productsType.title}
+							products={productsType.products}
+						>
+							{(productsType.products).map(product=>{
+								return(
+									<ProductCard
+										key={`${productsType.type}-${product.title}:${product.id}`}
+										productType={productsType.type}
+										product={product}
+										setIsModalOpen={setIsModalOpen}
+									/>
+								)
+							})}
+						</ProductsWrapper>
+					)
+				}
+				)}
 			</Container>
 			<Footer />
 		</>

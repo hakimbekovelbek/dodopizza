@@ -11,6 +11,7 @@ import {
 import React, { useState } from 'react'
 
 import { PRODUCTS_DATA } from 'constants/index'
+import {Product, ComboProducts, ComboProductTypes} from 'constants/dataBase/interfces'
 // import { ProductType } from 'constants/dataBase/interfces'
 //
 // export interface ProductDataInter{
@@ -24,8 +25,8 @@ export const HomePage: React.FC = () => {
 	return (
 		<>
 			<Container>
-				<Banner setIsAuthModalOpen={setIsAuthModalOpen} />
-				<NavigationBar />
+				<Banner setIsAuthModalOpen={setIsAuthModalOpen}/>
+				<NavigationBar/>
 				<Modal
 					isModalOpen={isModalOpen}
 					setIsModalOpen={setIsModalOpen}
@@ -35,14 +36,14 @@ export const HomePage: React.FC = () => {
 					setIsAuthModalOpen={setIsAuthModalOpen}
 				/>
 				{PRODUCTS_DATA.map(productsType => {
-					// console.log(product)
-					return (
-						<ProductsWrapper
-							key={`${productsType.type}:${productsType.id}`}
-							title={productsType.title}
-							products={productsType.products}
-						>
-							{(productsType.products).map(product=>{
+						// console.log(product)
+						return (
+							<ProductsWrapper
+								key={`${productsType.type}:${productsType.id}`}
+								title={productsType.title}
+								products={productsType.products}
+							>
+								{(productsType.products).map((product: Product | ComboProductTypes)=>{
 								return(
 									<ProductCard
 										key={`${productsType.type}-${product.title}:${product.id}`}

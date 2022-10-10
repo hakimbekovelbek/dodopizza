@@ -1,6 +1,4 @@
-export type Id={
-    id:string|number
-}
+export type Id=string|number
 
 export interface Addons {
     id?:Id

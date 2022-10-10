@@ -3,7 +3,7 @@ export type Id={
 }
 
 export interface Addons {
-    id?: any
+    id?:Id
     title: string
     img_url: string
     isChosen: boolean
@@ -16,20 +16,20 @@ export interface Addons {
 }
 
 export interface Ingredients {
-    id: any
+    id:Id
     title: string
     optional: boolean
     isChosen:boolean
 }
 
 export interface Types {
-    id?: any
+    id?:Id
     thin?: string
     normal?: string
 }
 
 export interface Nutrition {
-    id?: any
+    id?:Id
     calories?: number
     proteins?: number
     fats?: number
@@ -39,7 +39,7 @@ export interface Nutrition {
 }
 
 export interface Sizes {
-    id?: any
+    id?:Id
     small?: {
         price: number
         imgs?: Types
@@ -74,7 +74,7 @@ interface ButtonType{
 }
 
 export interface Product {
-    id: number | string
+    id:Id 
     title: string
     img: string
     price: number
@@ -105,7 +105,7 @@ export interface ComboProductTypes extends ComboProducts{
 // }
 
 export interface ProductType {
-    id: any
+    id:Id
     title: string
     type: string
     products: Array<Product|ComboProducts|ComboProductTypes>

@@ -1,18 +1,26 @@
 import classNames from 'classnames'
-import { useRef, useEffect, MouseEvent, RefObject } from 'react'
+import { Product } from 'constants/dataBase/interfces'
+import { useRef, useEffect, MouseEvent, RefObject, useState } from 'react'
+import { INGREDIENTS } from 'constants/dataBase/ingredients'
+import { capitalize } from 'utils/capitalize.util'
 // @ts-ignore
 import styles from './Modal.module.scss'
 
 interface IModalProps {
 	isModalOpen: boolean
 	setIsModalOpen: Function
+	product: Product | null
 }
+
 export const Modal: React.FC<IModalProps> = ({
 	isModalOpen,
 	setIsModalOpen,
+	product,
 }: IModalProps) => {
 	const smallSliderRef = useRef<HTMLDivElement>(null)
 	const largeSliderRef = useRef<HTMLDivElement>(null)
+
+	const [ingredients] = useState(INGREDIENTS)
 
 	useEffect(() => {
 		window.addEventListener('keydown', e => {
@@ -47,7 +55,13 @@ export const Modal: React.FC<IModalProps> = ({
 		}
 	}
 
-	return (
+	const ingredientClickHandler = (e: MouseEvent<HTMLLIElement>) => {
+		if (e.currentTarget.dataset.optional === 'true') {
+			e.currentTarget.toggleAttribute('data-removed')
+		}
+	}
+
+	return product ? (
 		<>
 			<div
 				className={classNames(styles.modal, styles.modalMedium, {
@@ -67,7 +81,7 @@ export const Modal: React.FC<IModalProps> = ({
 				<div className={styles.modalLeft} />
 				<div className={styles.modalRight}>
 					<div className={styles.modalScroll}>
-						<h4 className={styles.modalTitle}>Овощи и грибы</h4>
+						<h4 className={styles.modalTitle}>{product.title}</h4>
 						<p className={classNames(styles.modalInfo, styles.info)}>
 							<span className={styles.infoSize} id='info_size'>
 								25 см
@@ -80,69 +94,25 @@ export const Modal: React.FC<IModalProps> = ({
 						<ul
 							className={classNames(styles.modalIngredientList, styles.ingredientList)}
 						>
-							<li
-								className={styles.ingredientListItem}
-								data-optional='true'
-								data-removed='false'
-							>
-								<span>Базилик</span>
-							</li>
-							,
-							<li className={styles.ingredientListItem} data-optional='false'>
-								<span>томатный соус</span>
-							</li>
-							,
-							<li
-								className={styles.ingredientListItem}
-								data-optional='true'
-								data-removed='false'
-							>
-								<span>кубики брынзы</span>
-							</li>
-							,
-							<li
-								className={styles.ingredientListItem}
-								data-optional='true'
-								data-removed='false'
-							>
-								<span>шампиньоны</span>
-							</li>
-							,
-							<li
-								className={styles.ingredientListItem}
-								data-optional='true'
-								data-removed='false'
-							>
-								<span>сладкий перец</span>
-							</li>
-							,
-							<li
-								className={styles.ingredientListItem}
-								data-optional='true'
-								data-removed='false'
-							>
-								<span>красный лук</span>
-							</li>
-							,
-							<li className={styles.ingredientListItem} data-optional='false'>
-								<span>моцарелла</span>
-							</li>
-							,
-							<li
-								className={styles.ingredientListItem}
-								data-optional='true'
-								data-removed='false'
-							>
-								<span>маслины</span>
-							</li>
-							,
-							<li
-								className={styles.ingredientListItem}
-								data-optional='true'
-								data-removed='false'
-							>
-								<span>томаты</span>
-							</li>
+							{product.ingredients.map((id, index) => {
+								const ingredient = ingredients[id - 1]
+								console.log(ingredient.optional)
+
+								return (
+									<>
+										<li
+											className={styles.ingredientListItem}
+											data-optional={ingredient.optional}
+											onClick={ingredientClickHandler}
+										>
+											<span>
+												{!index ? capitalize(ingredient.title) : ingredient.title}
+											</span>
+										</li>
+										,&nbsp;
+									</>
+								)
+							})}
 						</ul>
 
 						<div className={classNames(styles.modalSliderBtn, styles.sliderBtn)}>
@@ -242,13 +212,14 @@ export const Modal: React.FC<IModalProps> = ({
 						</div>
 					</div>
 
-					<button className={styles.modalCardBtn} type='button' tabIndex={-1}>
-						Добавить в корзину за 85 000 сум
-					</button>
+					<div className={styles.modalCardBtnContainer}>
+						<button className={styles.modalCardBtn} type='button' tabIndex={-1}>
+							Добавить в корзину за 85 000 сум
+						</button>
+					</div>
 				</div>
 			</div>
-
 			<div className={styles.modalBg} onClick={modalCloseHandler} />
 		</>
-	)
+	) : null
 }

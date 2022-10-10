@@ -5,17 +5,20 @@ import styles from './ProductCard.module.scss'
 export interface IProductCardProps {
 	product: Product
 	setIsModalOpen: Function
+	setSelectedProduct: Function
 }
 
 export const ProductCard: React.FC<IProductCardProps> = ({
 	product,
 	setIsModalOpen,
+	setSelectedProduct,
 }: IProductCardProps) => {
 	return (
 		<div
 			className={styles.card}
 			onClick={() => {
 				setIsModalOpen(true)
+				setSelectedProduct(product)
 			}}
 		>
 			<div className={styles.card_body}>

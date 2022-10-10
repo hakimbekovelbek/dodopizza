@@ -115,7 +115,10 @@
 .modalRight {
 	width: 394px;
 	height: 100%;
-	padding: 30px;
+	padding-top: 30px;
+	background-color: #fcfcfc;
+	border-radius: 0 20px 20px 0;
+	overflow: hidden;
 }
 .modalTitle {
 	font-size: 24px;
@@ -124,18 +127,11 @@
 	padding: 0 3px 0;
 }
 .modalScroll {
-	height: 487px;
+	height: 478px;
 	overflow: hidden scroll;
-	padding: 0 17px;
-	margin-bottom: 25px;
+	padding: 0 30px;
 }
-.modalScroll::-webkit-scrollbar {
-	width: 8px;
-}
-.modalScroll::-webkit-scrollbar-thumb {
-	background-color: rgba(57, 57, 57, 0.3);
-	border-radius: 4px;
-}
+
 .modalCardBtn {
 	display: block;
 	width: 100%;
@@ -149,6 +145,9 @@
 	color: white;
 	font-size: 16px;
 	line-height: 24px;
+	&Container {
+		margin: 24px 30px 30px;
+	}
 }
 .modalCardBtn:hover {
 	background-color: #e86100;
@@ -189,11 +188,11 @@
 	right: 0;
 	content: url('../../../public/close.svg');
 }
-.ingredientListItem[data-removed='true'] span {
+.ingredientListItem[data-removed] span {
 	border-bottom: 1px solid transparent;
 	text-decoration: line-through;
 }
-.ingredientListItem[data-removed='true']::after {
+.ingredientListItem[data-removed]::after {
 	content: url('../../../public/return.svg');
 }
 
@@ -209,46 +208,4 @@
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-}
-.addonsCard {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	text-align: center;
-	width: calc(33.3333% - 6px);
-	height: 166px;
-	margin-bottom: 8px;
-	background-color: #fff;
-	box-shadow: #0605321f 0 4px 20px;
-	border-radius: 12px;
-	transition: box-shadow 150ms ease-out;
-	cursor: pointer;
-	border: 1px solid white;
-}
-.addonsCardSelected {
-	box-shadow: #0605321f 0 0 8px;
-	border: 1px solid #ff6900;
-}
-.addonsCardSelected::after {
-	position: absolute;
-	top: 3px;
-	right: 3px;
-	content: url('../../../public/tick.svg');
-}
-
-.addonCardImage {
-	width: 90px;
-}
-.addonCardTitle {
-	height: 32px;
-	font-size: 12px;
-	font-weight: 400;
-	line-height: 16px;
-}
-.addonCardPrice {
-	font-size: 16px;
-	line-height: 20px;
-	font-weight: 500;
-	margin: 4px;
 }

@@ -1,0 +1,42 @@
+.addonsCard {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	width: calc(33.3333% - 6px);
+	height: 166px;
+	margin-bottom: 8px;
+	background-color: #fff;
+	box-shadow: #0605321f 0 4px 20px;
+	border-radius: 12px;
+	transition: box-shadow 150ms ease-out;
+	cursor: pointer;
+	border: 1px solid white;
+}
+.addonsCardSelected {
+	box-shadow: #0605321f 0 0 8px;
+	border: 1px solid #ff6900;
+}
+.addonsCardSelected::after {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	content: url('../../../public/tick.svg');
+}
+
+.addonCardImage {
+	width: 90px;
+}
+.addonCardTitle {
+	height: 32px;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+}
+.addonCardPrice {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 500;
+	margin: 4px;
+}

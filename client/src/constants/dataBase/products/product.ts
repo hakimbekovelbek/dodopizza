@@ -7,7 +7,7 @@ export interface Product {
 	price: number
 	sizes?: Sizes
 	additionalPrice?: number
-	ingredients?: Array<Array<any | boolean>>
+	ingredients?: number[]
 	description?: string
 	addons?: Array<Array<any | boolean>>
 }

@@ -6,6 +6,7 @@ export const PIZZAS_COMBO: Array<ComboProducts> = [
 		title: 'Пицца из половинок',
 		price: 90000,
 		description: 'Соберите свою пиццу 35 см с двумя разными вкусами',
+		ingredients: [],
 		img: 'https://dodopizza-a.akamaihd.net/static/Img/Products/1be8fabd45824fc7b042ccd213c20474_292x292.jpeg',
 		products: [
 			['Индейка и грибы', 47000],
@@ -46,6 +47,7 @@ export const PIZZAS: Array<Product> = [
 		price: 59000,
 		description:
 			'Сладкий перец, куриные кусочки, сыр моцарелла, красный лук, соус чили, смесь сыров чеддер и пармезан',
+		ingredients: [1, 2, 3, 4, 5, 6],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/5eca54ca8e3f4c4b986a26cdb7d7d09a_584x584.jpeg',
 		sizes: {
 			small: {
@@ -102,6 +104,7 @@ export const PIZZAS: Array<Product> = [
 		price: 75000,
 		description:
 			'Сыр моцарелла, пепперони, смесь сыров чеддер и пармезан, пицца-соус',
+		ingredients: [3, 7, 6, 8],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/5eca54ca8e3f4c4b986a26cdb7d7d09a_584x584.jpeg',
 		sizes: {
 			small: {
@@ -158,6 +161,7 @@ export const PIZZAS: Array<Product> = [
 		price: 55000,
 		description:
 			'Сыр моцарелла, пепперони, смесь сыров чеддер и пармезан, пицца-соус',
+		ingredients: [3, 6, 7, 8],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/c5c7d82b42584b0caaa2e6d32be39c92_584x584.jpeg',
 		sizes: {
 			small: {
@@ -225,6 +229,7 @@ export const PIZZAS: Array<Product> = [
 		price: 49000,
 		description:
 			'Митболы из 100% говядины, сыр моцарелла из цельного молока, красный лук, соленые огурчики, томаты, сырный соус',
+		ingredients: [12, 18, 4, 13, 14, 15],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/b6e0567c71ba4c0891b67310b0587179_584x584.jpeg',
 		sizes: {
 			small: {
@@ -293,6 +298,7 @@ export const PIZZAS: Array<Product> = [
 		price: 65000,
 		description:
 			'Индейка, говядина, пепперони с говядиной, моцарелла из цельного молока, шампиньоны, сладкий перец, красный лук, томатный соус, томаты',
+		ingredients: [16, 9, 10, 19, 1, 4, 11, 14],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/de51de47773843fe95957caab3d7f974_584x584.png',
 		sizes: {
 			small: {
@@ -365,6 +371,7 @@ export const PIZZAS: Array<Product> = [
 		price: 55000,
 		description:
 			'Моцарелла из цельного молока, индейка, пепперони с говядиной, брынза, томаты, шампиньоны, томатный соус, итальянские травы',
+		ingredients: [10, 16, 9, 20, 14, 19, 11, 21],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/9f8bf5fd916441ee812eab57885885d5_584x584.jpeg',
 		sizes: {
 			small: {
@@ -420,6 +427,7 @@ export const PIZZAS: Array<Product> = [
 		title: 'Сырный цыпленок',
 		price: 45000,
 		description: 'Цыпленок, моцарелла из цельного молока, сырный соус, томаты',
+		ingredients: [22, 18, 15, 14],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/aa293f3b65874a8195bc1c36973ad465_584x584.jpeg',
 		sizes: {
 			small: {
@@ -491,6 +499,7 @@ export const PIZZAS: Array<Product> = [
 		price: 65000,
 		description:
 			'Пепперони с говядиной, увеличенная порция моцареллы из цельного молока, томатный соус',
+		ingredients: [9, 23, 11],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/af667534db434f16a3f0ec68aedc8451_584x584.jpeg',
 		sizes: {
 			small: {
@@ -561,6 +570,7 @@ export const PIZZAS: Array<Product> = [
 		price: 55000,
 		description:
 			'Ветчина из цыпленка, сладкий перец, моцарелла из цельного молока, томатный соус, итальянские травы, чеснок, сыр чеддер',
+		ingredients: [24, 1, 10, 11, 21, 25, 26],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/30f2957b88154e94a2c8182c1b7465c4_584x584.jpeg',
 		sizes: {
 			small: {
@@ -633,6 +643,7 @@ export const PIZZAS: Array<Product> = [
 		price: 39000,
 		description:
 			'Увеличенная порция моцареллы из цельного молока, томаты, итальянские травы, томатный соус',
+		ingredients: [23, 14, 21, 11],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/47dac5afdcc84aaaa5fe029f2f840c82_584x584.jpeg',
 		sizes: {
 			small: {
@@ -702,6 +713,7 @@ export const PIZZAS: Array<Product> = [
 		title: 'Пицца-сердце',
 		price: 75000,
 		description: 'Пицца-соус , сыр моцарелла, пепперони',
+		ingredients: [8, 3, 7],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/d53b558190ab473597515c4da9d14096_584x584.png',
 		sizes: {
 			medium: {
@@ -724,6 +736,7 @@ export const PIZZAS: Array<Product> = [
 		price: 49000,
 		description:
 			'Индейка, шампиньоны, увеличенная порция моцареллы из цельного молока, томатный соус',
+		ingredients: [16, 19, 23, 11],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/59a490e30eb143a3b9619346914474f6_584x584.jpeg',
 		sizes: {
 			small: {
@@ -798,6 +811,7 @@ export const PIZZAS: Array<Product> = [
 		price: 49000,
 		description:
 			'Ветчина из цыпленка, ананасы, моцарелла из цельного молока, томатный соус',
+		ingredients: [24, 27, 18, 11],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/55e123ffb87c4403828b86089b58fb70_584x584.jpeg',
 		sizes: {
 			small: {
@@ -873,6 +887,7 @@ export const PIZZAS: Array<Product> = [
 		price: 55000,
 		description:
 			'Моцарелла из цельного молока, брынза, шампиньоны, сладкий перец, томаты, томатный соус, базилик, красный лук',
+		ingredients: [10, 20, 19, 1, 14, 11, 28, 4],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/f4bbf854891b4bcf92fa0c08d8951181_584x584.jpeg',
 		sizes: {
 			small: {
@@ -939,6 +954,7 @@ export const PIZZAS: Array<Product> = [
 		price: 55000,
 		description:
 			'Цыплёнок, моцарелла из цельного молока, томатный соус, перец халапеньо, сладкий перец, соус сальса, томаты, красный лук',
+		ingredients: [22, 18, 11, 29, 1, 30, 14, 4],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/2837c461187f46b08cfca8c6715fe9e9_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1010,6 +1026,7 @@ export const PIZZAS: Array<Product> = [
 		price: 59000,
 		description:
 			'Митболы из говядины, индейка, пепперони с говядиной, моцарелла из цельного молока, томатный соус',
+		ingredients: [31, 16, 9, 10, 11],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/bf4c405c184c48108a666790acdbbb19_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1079,6 +1096,7 @@ export const PIZZAS: Array<Product> = [
 		price: 59000,
 		description:
 			'Цыпленок, моцарелла из цельного молока, ветчина из цыпленка, соус барбекю, томатный соус, красный лук',
+		ingredients: [22, 10, 24, 32, 11, 4],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/fa2d45e2596143c6989cf32350cd5f07_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1151,6 +1169,7 @@ export const PIZZAS: Array<Product> = [
 		price: 59000,
 		description:
 			'Цыпленок, моцарелла из цельного молока, ветчина из цыпленка, соус ранч, томаты',
+		ingredients: [22, 10, 24, 32, 14],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/d3a63d0911cf45ca920a7c82c2e03757_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1223,6 +1242,7 @@ export const PIZZAS: Array<Product> = [
 		price: 59000,
 		description:
 			'Цыпленок, пепперони с говядиной, моцарелла из цельного молока, кисло-сладкий соус, томатный соус',
+		ingredients: [22, 9, 10, 33, 11],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/5dd7645b0a0d4cc5b82d6852ca1e1569_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1299,6 +1319,7 @@ export const PIZZAS: Array<Product> = [
 		price: 65000,
 		description:
 			'Цыпленок, пепперони с говядиной, моцарелла из цельного молока, индейка, охотничьи колбаски, томатный соус',
+		ingredients: [22, 9, 10, 16, 34, 11],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/a19e34d8246a4c179fc62479e1174669_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1371,6 +1392,7 @@ export const PIZZAS: Array<Product> = [
 		price: 45000,
 		description:
 			'Пепперони с говядиной, увеличенная порция моцареллы из цельного молока, томаты, томатный соус',
+		ingredients: [9, 23, 14, 11],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/0abcc6d258c94b3bb1412b6cb644dec5_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1445,6 +1467,7 @@ export const PIZZAS: Array<Product> = [
 		price: 65000,
 		description:
 			'Моцарелла из цельного молока, сыр блю чиз, сыр пармезан, сыр чеддер, томатный соус',
+		ingredients: [18, 35, 36, 26, 11],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/966d38e2a1dc4386afc53684fbdd3569_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1512,6 +1535,7 @@ export const PIZZAS: Array<Product> = [
 		price: 65000,
 		description:
 			'Пепперони с говядиной, моцарелла из цельного молока, говядина, перец халапеньо, соус барбекю, сладкий перец, томаты, красный лук',
+		ingredients: [9, 10, 17, 29, 32, 1, 14, 4],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/1f6c13d493604d539cecdb2e91a6b908_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1584,6 +1608,7 @@ export const PIZZAS: Array<Product> = [
 		title: 'Сырная 🌱',
 		price: 39000,
 		description: 'Увеличенная порция моцареллы из цельного молока, томатный соус',
+		ingredients: [23, 11],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/336673eb89994f878f6df5589f6cedf9_584x584.jpeg',
 		sizes: {
 			small: {
@@ -1654,6 +1679,7 @@ export const PIZZAS: Array<Product> = [
 		title: 'Пицца-пирог \uD83C\uDF31 ',
 		price: 55000,
 		description: 'Ананасы, брусника, сгущенное молоко',
+		ingredients: [27, 37, 38],
 		img: 'https://cdn.dodostatic.net/static/Img/Products/a88032047f394ef2a6c154ab9089e606_584x584.jpeg',
 		sizes: {
 			small: {

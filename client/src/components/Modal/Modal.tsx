@@ -1,10 +1,11 @@
 import classNames from 'classnames'
 import { Product } from 'constants/dataBase/interfces'
 import { useRef, useEffect, MouseEvent, RefObject, useState } from 'react'
-import { INGREDIENTS } from 'constants/dataBase/ingredients'
+import { ADDONS, INGREDIENTS } from 'constants/dataBase/ingredients'
 import { capitalize } from 'utils/capitalize.util'
 // @ts-ignore
 import styles from './Modal.module.scss'
+import { AddonCard } from './components/AddonCard'
 
 interface IModalProps {
 	isModalOpen: boolean
@@ -21,6 +22,7 @@ export const Modal: React.FC<IModalProps> = ({
 	const largeSliderRef = useRef<HTMLDivElement>(null)
 
 	const [ingredients] = useState(INGREDIENTS)
+	const [addons] = useState(ADDONS)
 
 	useEffect(() => {
 		window.addEventListener('keydown', e => {
@@ -96,8 +98,6 @@ export const Modal: React.FC<IModalProps> = ({
 						>
 							{product.ingredients.map((id, index) => {
 								const ingredient = ingredients[id - 1]
-								console.log(ingredient.optional)
-
 								return (
 									<>
 										<li
@@ -173,41 +173,14 @@ export const Modal: React.FC<IModalProps> = ({
 						<div className={styles.addons}>
 							<h5 className={styles.addonsTitle}>Добавить в пиццу</h5>
 							<div className={styles.addonsList}>
-								{[
-									{
-										img: 'https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A219740A95611E9DBAED95FEBAA',
-										title: 'Острый халапеньо',
-										price: 5000,
-									},
-									{
-										img: 'https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A219740A95611EA0840DB86284E',
-										title: 'Сыр моцарелла',
-										price: 18000,
-									},
-									{
-										img: 'https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A262427A95111E9DBAF25CA64B9',
-										title: 'Ветчина',
-										price: 10000,
-									},
-									{
-										img: 'https://dodopizza-a.akamaihd.net/static/Img/Ingredients/000D3A219740A95611E9DBAED95FEBAA',
-										title: 'Острый халапеньо',
-										price: 5000,
-									},
-								].map(addon => (
-									<div
-										className={classNames(styles.addonsCard, styles.addonCard)}
-										key={Math.random()}
-									>
-										<img
-											src={addon.img}
-											alt={addon.title}
-											className={styles.addonCardImage}
-										/>
-										<h6 className={styles.addonCardTitle}>{addon.title}</h6>
-										<p className={styles.addonCardPrice}>{addon.price} сум</p>
-									</div>
-								))}
+								{product.addons &&
+									product.addons.map(addonTitle => {
+										const foundAddon = addons.find(addon => {
+											return addon.title === addonTitle
+										})
+
+										return foundAddon && <AddonCard {...foundAddon} />
+									})}
 							</div>
 						</div>
 					</div>

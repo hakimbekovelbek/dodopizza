@@ -1,15 +1,12 @@
 export interface Addons {
-	id?: any
+	id: any
 	title: string
-	img_url: string
-	isChosen: boolean
-	price:
-		| number
-		| {
-				small?: number
-				medium?: number
-				large?: number
-		  }
+	img: string
+	price: {
+		small: number
+		medium: number
+		large: number
+	}
 }
 
 export interface Ingredient {

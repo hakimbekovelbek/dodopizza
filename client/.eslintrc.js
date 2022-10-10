@@ -37,6 +37,7 @@ module.exports = {
 		'prefer-destructuring': 0,
 		'no-unused-vars': 0,
 		'jsx-a11y/no-noninteractive-element-interactions': 0,
+		'react/jsx-props-no-spreading': 0,
 	},
 	settings: {
 		'import/ignore': ['.css$', 'node_modules/*'],
